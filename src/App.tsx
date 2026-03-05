@@ -1,35 +1,72 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { Wrench, MapPin } from "lucide-react";
+import { Spinner } from "@/components/ui/spinner";
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  );
+interface WipHomepageProps {
+  brandName?: string;
+  title?: string;
+  subtitle?: string;
+  expectedLaunch?: string;
 }
 
-export default App;
+export default function App({
+  brandName = "Geolivier",
+  title = "Work in progress",
+  subtitle = "We're currently building something amazing.",
+  expectedLaunch = "Tomorrow, kind off",
+}: WipHomepageProps) {
+  return (
+    // Fullscreen container, perfectly centered
+    <div className="flex min-h-screen w-full flex-col bg-background selection:bg-primary/10">
+      {/* Minimal Header (to establish it's a homepage) */}
+      <header className="border-b bg-card">
+        <div className="container flex h-16 items-center px-4 md:px-6">
+          <MapPin className="h-5 w-5 text-primary" strokeWidth={2.5} />
+          <span className="text-lg ml-2 font-bold tracking-tight text-foreground">
+            {brandName}
+          </span>
+        </div>
+      </header>
+
+      {/* Main Content Area (centered) */}
+      <main className="flex flex-1 flex-col items-center justify-center px-4 text-center md:px-6">
+        <div className="max-w-xl space-y-12">
+          {/* Visual Section: Spinner & Icon */}
+          <div className="relative flex items-center justify-center">
+            {/* The Spinner surrounds the main icon, subtle effect */}
+            <Spinner className="absolute h-24 w-24 text-primary/20" />
+
+            {/* Main construction icon (modern, muted bg) */}
+            <div className="relative z-10 rounded-full border bg-muted/50 p-6 shadow-inner">
+              <Wrench className="h-12 w-12 text-primary" strokeWidth={1} />
+            </div>
+          </div>
+
+          {/* Text Section */}
+          <div className="space-y-4">
+            <h1 className="text-4xl font-extrabold tracking-tighter text-foreground sm:text-5xl md:text-6xl">
+              {title}
+            </h1>
+            <p className="mx-auto max-w-175 text-lg text-muted-foreground sm:text-xl">
+              {subtitle}
+            </p>
+          </div>
+
+          {/* Optional Launch Date */}
+          {expectedLaunch && (
+            <div className="mt-8 rounded-full border bg-card px-4 py-1.5 text-sm font-medium text-muted-foreground shadow-sm">
+              Estimated Launch:{" "}
+              <span className="text-foreground">{expectedLaunch}</span>
+            </div>
+          )}
+        </div>
+      </main>
+
+      {/* Minimal Footer */}
+      <footer className="flex border-t bg-card py-6 items-center justify-center">
+        <div className="container px-4 text-center text-sm text-muted-foreground md:px-6">
+          © {new Date().getFullYear()} {brandName}. All rights reserved.
+        </div>
+      </footer>
+    </div>
+  );
+}
