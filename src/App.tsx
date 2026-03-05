@@ -1,5 +1,6 @@
 import { Wrench, MapPin } from "lucide-react";
 import { Spinner } from "@/components/ui/spinner";
+import { ThemeToggle } from "./components/theme/ThemeToggl";
 
 interface WipHomepageProps {
   brandName?: string;
@@ -15,15 +16,16 @@ export default function App({
   expectedLaunch = "Tomorrow, kind off",
 }: WipHomepageProps) {
   return (
-    // Fullscreen container, perfectly centered
     <div className="flex min-h-screen w-full flex-col bg-background selection:bg-primary/10">
-      {/* Minimal Header (to establish it's a homepage) */}
       <header className="border-b bg-card">
-        <div className="container flex h-16 items-center px-4 md:px-6">
-          <MapPin className="h-5 w-5 text-primary" strokeWidth={2.5} />
-          <span className="text-lg ml-2 font-bold tracking-tight text-foreground">
-            {brandName}
-          </span>
+        <div className="flex h-16 items-center justify-between px-4 md:px-6">
+          <div className="flex items-center">
+            <MapPin className="h-5 w-5 text-primary" strokeWidth={2.5} />
+            <span className="text-lg ml-2 font-bold tracking-tight text-foreground">
+              {brandName}
+            </span>
+          </div>
+          <ThemeToggle />
         </div>
       </header>
 
