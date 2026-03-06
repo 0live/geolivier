@@ -1,7 +1,9 @@
 {
   "hello": "Bonjour le monde",
   "home.title": "Bienvenue sur geolivier",
-  "home.subtitle": "Un endroit pour explorer le monde du code, des cartes et plus encore.",
+  "home.greeting": "Bonjour! Je suis Olivier Ribiere",
+  "home.description1": "Géomaticien dans son sens le plus littéral: géographe devenu développeur. Issu de la cartographie, je développe aujourd'hui des applications web ou des chaines de traitements de données.",
+  "home.description2": "Si vous voulez en savoir plus sur mon profil, vous pouvez consulter des exemples de <1>projets</1> sur lesquels j'ai été amené à travailler, le <2>blog</2> où j'essaie de poster des articles sur le monde unique de la géomatique ou mon <3>profil détaillé</3>.",
   "wip.title": "Travail en cours",
   "wip.subtitle": "Nous construisons actuellement quelque chose d'incroyable.",
   "wip.expectedLaunch": "Demain, ou presque",
