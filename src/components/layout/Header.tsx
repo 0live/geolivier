@@ -3,7 +3,7 @@ import { ThemeToggle } from "@/components/ui/ThemeToggl";
 import { Page } from "@/types/Page";
 import { MapPin } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import { LanguageSelector } from "./LanguageSelector";
 
 export function Header() {
@@ -23,13 +23,17 @@ export function Header() {
         <div className="flex items-center gap-4">
           <nav className="flex items-center gap-4 mr-10">
             {Object.values(Page).map((page) => (
-              <Link 
+              <NavLink 
                 key={page}
                 to={`/${page}`} 
-                className="text-sm font-medium hover:underline text-muted-foreground"
+                className={({ isActive }) => 
+                  `text-sm font-medium hover:underline transition-colors ${
+                    isActive ? "text-primary" : "text-muted-foreground"
+                  }`
+                }
               >
                 {t(`nav.${page}`)}
-              </Link>
+              </NavLink>
             ))}
           </nav>
           
