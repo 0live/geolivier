@@ -1,3 +1,4 @@
+import { Icons } from "@/components/ui/icons";
 import { ThemeToggle } from "@/components/ui/ThemeToggl";
 import { Page } from "@/types/Page";
 import { MapPin } from "lucide-react";
@@ -31,6 +32,28 @@ export function Header() {
               </Link>
             ))}
           </nav>
+          
+          <div className="flex items-center gap-4 border-r pr-4 mr-2">
+            <a 
+              href="https://github.com/0live" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="GitHub"
+            >
+              <Icons.github className="h-5 w-5" />
+            </a>
+            <a 
+              href="https://linkedin.com/in/olivier-ribiere" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="text-muted-foreground hover:text-foreground transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Icons.linkedin className="h-5 w-5" />
+            </a>
+          </div>
+
           <LanguageSelector />
           <ThemeToggle />
         </div>
