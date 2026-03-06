@@ -1,6 +1,12 @@
 {
   "hello": "Bonjour le monde",
+  "home.title": "Bienvenue sur geolivier",
+  "home.subtitle": "Un endroit pour explorer le monde du code, des cartes et plus encore.",
   "wip.title": "Travail en cours",
   "wip.subtitle": "Nous construisons actuellement quelque chose d'incroyable.",
-  "wip.expectedLaunch": "Demain, ou presque"
+  "wip.expectedLaunch": "Demain, ou presque",
+  "wip.estimatedLaunchPrefix": "Lancement estimé : ",
+  "nav.projects": "Projets",
+  "nav.blog": "Blog",
+  "nav.about": "À propos"
 }

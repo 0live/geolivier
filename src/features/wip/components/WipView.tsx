@@ -1,5 +1,6 @@
 import { Spinner } from "@/components/ui/spinner";
 import { Wrench } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface WipHomepageProps {
   title?: string;
@@ -8,10 +9,15 @@ interface WipHomepageProps {
 }
 
 export function WipView({
-  title = "Work in progress",
-  subtitle = "We're currently building something amazing.",
-  expectedLaunch = "Tomorrow, kind off",
+  title,
+  subtitle,
+  expectedLaunch,
 }: WipHomepageProps) {
+  const { t } = useTranslation();
+
+  const displayTitle = title ?? t("wip.title");
+  const displaySubtitle = subtitle ?? t("wip.subtitle");
+  const displayExpectedLaunch = expectedLaunch ?? t("wip.expectedLaunch");
   return (
     <div className="max-w-xl space-y-12">
       {/* Visual Section: Spinner & Icon */}
@@ -28,18 +34,18 @@ export function WipView({
       {/* Text Section */}
       <div className="space-y-4 text-center">
         <h1 className="text-4xl font-extrabold tracking-tighter text-foreground sm:text-5xl md:text-6xl">
-          {title}
+          {displayTitle}
         </h1>
         <p className="mx-auto max-w-175 text-lg text-muted-foreground sm:text-xl">
-          {subtitle}
+          {displaySubtitle}
         </p>
       </div>
 
       {/* Optional Launch Date */}
-      {expectedLaunch && (
+      {displayExpectedLaunch && (
         <div className="mt-8 mx-auto w-fit rounded-full border bg-card px-4 py-1.5 text-sm font-medium text-muted-foreground shadow-sm">
-          Estimated Launch:{" "}
-          <span className="text-foreground">{expectedLaunch}</span>
+          {t("wip.estimatedLaunchPrefix")}
+          <span className="text-foreground">{displayExpectedLaunch}</span>
         </div>
       )}
     </div>
