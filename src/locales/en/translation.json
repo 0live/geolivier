@@ -10,5 +10,9 @@
   "wip.estimatedLaunchPrefix": "Estimated Launch: ",
   "nav.projects": "Projects",
   "nav.blog": "Blog",
-  "nav.about": "About"
+  "nav.about": "About",
+  "blog.description": "Articles and thoughts on geomatics and code.",
+  "blog.empty": "No articles yet.",
+  "projects.description": "My open-source work and personal projects.",
+  "projects.empty": "No projects yet."
 }

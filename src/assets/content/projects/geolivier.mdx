@@ -1,0 +1,32 @@
+---
+title: "geolivier.dev"
+description: "Mon site personnel portfolio construit avec React, Vite et MDX."
+tags: ["react", "vite", "tailwind"]
+repoUrl: "https://github.com/0live/geolivier"
+liveUrl: "https://geolivier.dev"
+---
+
+import { WipView } from "@/features/wip";
+
+# geolivier.dev
+
+Ce projet est mon portfolio personnel, construit initialement comme une SPA simple et que j'enrichis avec un système de blog statique propulsé par MDX.
+
+## Stack technique
+
+J'ai choisi de rester sur une stack 100% Client-Side Rendered (CSR) pour des raisons de simplicité de déploiement, en favorisant les performances via le Lazy Loading des contenus :
+
+1.  **Vite** : Bundleur ultra-rapide.
+2.  **React 19** : Rendering et UI.
+3.  **Tailwind CSS 4** : Utility-first CSS.
+4.  **MDX** : Markdown for the Component Era.
+
+Le code source est disponible sur GitHub.
+
+## Composant React Injecté
+
+Voici l'affichage du composant \`WipView\` importé directement dans ce fichier Markdown :
+
+<div className="not-prose border rounded-lg overflow-hidden my-8">
+  <WipView />
+</div>

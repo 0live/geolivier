@@ -10,5 +10,9 @@
   "wip.estimatedLaunchPrefix": "Lancement estimé : ",
   "nav.projects": "Projets",
   "nav.blog": "Blog",
-  "nav.about": "À propos"
+  "nav.about": "À propos",
+  "blog.description": "Articles et pensées sur la géomatique et le code.",
+  "blog.empty": "Aucun article pour le moment.",
+  "projects.description": "Mes travaux open-source et projets personnels.",
+  "projects.empty": "Aucun projet pour le moment."
 }
