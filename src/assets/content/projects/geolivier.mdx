@@ -1,32 +1,16 @@
 ---
-title: "geolivier.dev"
+title: "geolivier.xyz"
 description: "Mon site personnel portfolio construit avec React, Vite et MDX."
 tags: ["react", "vite", "tailwind"]
 repoUrl: "https://github.com/0live/geolivier"
 liveUrl: "https://geolivier.dev"
 ---
 
-import { WipView } from "@/features/wip";
+## geolivier.xyz : Mon premier site React
 
-# geolivier.dev
+J'ai hésité à indiquer que ceci est mon premier site avec React, mais je me dis que cela peut également démontrer ma capacité à adapter les bons patterns de développement dans un environnement nouveau.
+Simple SPA, c'est l'occasion pour moi de me présenter et ce site est amené à être la vitrine d'un projet beaucoup plus conséquent sur lequel j'ai commencé à travailler récemment. Stay tuned!
 
-Ce projet est mon portfolio personnel, construit initialement comme une SPA simple et que j'enrichis avec un système de blog statique propulsé par MDX.
+## La petite feature qui sort du lot
 
-## Stack technique
-
-J'ai choisi de rester sur une stack 100% Client-Side Rendered (CSR) pour des raisons de simplicité de déploiement, en favorisant les performances via le Lazy Loading des contenus :
-
-1.  **Vite** : Bundleur ultra-rapide.
-2.  **React 19** : Rendering et UI.
-3.  **Tailwind CSS 4** : Utility-first CSS.
-4.  **MDX** : Markdown for the Component Era.
-
-Le code source est disponible sur GitHub.
-
-## Composant React Injecté
-
-Voici l'affichage du composant \`WipView\` importé directement dans ce fichier Markdown :
-
-<div className="not-prose border rounded-lg overflow-hidden my-8">
-  <WipView />
-</div>
+N'ayant pas envie de déployer une architecture backend, ni d'utiliser un metaframework à ce stade, j'ai mis en place un système de blog statique basé sur des fichiers MDX indexés à la compilation et injectés à la demande via Lazy-Loading. Cela me permet de créer du contenu de manière simple et rapide, tout en ayant un chargement des pages efficace et un bundle de départ réduit au minimum. Cela sera l'occasion d'un premier post de blog!
