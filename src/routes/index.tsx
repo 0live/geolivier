@@ -1,4 +1,5 @@
 import App from "@/App";
+import i18n from "@/config/i18n";
 import { AboutView } from "@/features/about";
 import { BlogIndex, BlogPost, BlogPostsService } from "@/features/blog";
 import { HomeView } from "@/features/home";
@@ -17,22 +18,22 @@ export const router = createBrowserRouter([
       {
         path: "projects",
         children: [
-          { index: true, element: <ProjectsIndex />, loader: () => ProjectsService.fetchAll() },
+          { index: true, element: <ProjectsIndex />, loader: () => ProjectsService.fetchAll(i18n.language || "en") },
           { 
             path: ":slug", 
             element: <ProjectPost />,
-            loader: ({ params }) => ProjectsService.getComponent(params.slug!) 
+            loader: ({ params }) => ProjectsService.getComponent(params.slug!, i18n.language || "en") 
           },
         ],
       },
       {
         path: "blog",
         children: [
-          { index: true, element: <BlogIndex />, loader: () => BlogPostsService.fetchAll() },
+          { index: true, element: <BlogIndex />, loader: () => BlogPostsService.fetchAll(i18n.language || "en") },
           { 
             path: ":slug", 
             element: <BlogPost />,
-            loader: ({ params }) => BlogPostsService.getComponent(params.slug!) 
+            loader: ({ params }) => BlogPostsService.getComponent(params.slug!, i18n.language || "en") 
           },
         ],
       },
@@ -43,3 +44,7 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
+
+i18n.on('languageChanged', () => {
+  router.revalidate();
+});
