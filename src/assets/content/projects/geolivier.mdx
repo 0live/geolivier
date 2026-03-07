@@ -3,7 +3,7 @@ title: "geolivier.xyz"
 description: "Mon site personnel portfolio construit avec React, Vite et MDX."
 tags: ["react", "vite", "tailwind"]
 repoUrl: "https://github.com/0live/geolivier"
-liveUrl: "https://geolivier.dev"
+liveUrl: "https://geolivier.xyz"
 ---
 
 ## geolivier.xyz : Mon premier site React
@@ -13,4 +13,5 @@ Simple SPA, c'est l'occasion pour moi de me présenter et ce site est amené à 
 
 ## La petite feature qui sort du lot
 
-N'ayant pas envie de déployer une architecture backend, ni d'utiliser un metaframework à ce stade, j'ai mis en place un système de blog statique basé sur des fichiers MDX indexés à la compilation et injectés à la demande via Lazy-Loading. Cela me permet de créer du contenu de manière simple et rapide, tout en ayant un chargement des pages efficace et un bundle de départ réduit au minimum. Cela sera l'occasion d'un premier post de blog!
+N'ayant pas envie de déployer une architecture backend, ni d'utiliser un metaframework à ce stade, mon contenu est basé sur des fichiers MDX qui me permettent de gérer le contenu comme je pourrais le faire avec Next (markdown + composants React).
+Le cœur du système repose sur une les capacités de Vite pour indexer automatiquement mes dossiers et transformer chaque fichier MDX en un module React indépendant. Ce système permet de générer dynamiquement la liste de mes articles tout en isolant chaque contenu dans un 'chunk' séparé, chargé uniquement à la consultation pour garantir une navigation fluide. Cela sera l'occasion d'un premier post de blog!
