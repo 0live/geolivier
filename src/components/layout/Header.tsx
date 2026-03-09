@@ -14,9 +14,10 @@ export function Header() {
       <div className="flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
-            <MapPin className="h-5 w-5 text-primary" strokeWidth={2.5} />
-            <span className="text-lg ml-2 font-bold tracking-tight text-foreground">
-              geolivier
+            <span className="flex items-center text-lg font-bold tracking-tight text-foreground">
+              ge
+              <MapPin className="h-[0.85em] w-[0.85em] mx-[0.5px] text-primary" strokeWidth={3} />
+              livier
             </span>
           </Link>
         </div>

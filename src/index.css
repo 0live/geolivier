@@ -123,3 +123,12 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .bg-app-image {
+    background-image: url("./assets/theme_light_sr.webp");
+  }
+  .dark .bg-app-image {
+    background-image: url("./assets/theme_dark_sr.webp");
+  }
+}
