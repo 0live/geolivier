@@ -1,0 +1,33 @@
+---
+title: "Géofoncier Portal"
+description: "The national repository of land and land surveying data."
+tags: ["PostGIS", "jQuery", "OpenLayers", "Python", "GDAL"]
+liveUrl: "https://www.geofoncier.fr"
+year: 2013
+---
+
+import geofoncierImage from "./img/geofoncier.webp";
+
+<img
+  src={geofoncierImage}
+  alt="Géofoncier Portal"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Dematerialization of land data for the public interest
+
+The primary challenge of the Géofoncier Portal, led by the Order of Expert Surveyors (OGE), was to transform a field profession into a central player in digital geographic data. The challenge was to centralize and make accessible millions of boundary and property limit data, previously scattered in local archives.
+
+Beyond simple consultation, the portal had to address issues of legal security and transparency. Today, it allows individuals to know the history of a plot and professionals (notaries, local authorities, developers) to access crucial information such as risk zones, urban planning documents (PLU), and real estate transfers (DVF). The platform acts as a technical mediator between state databases (Cadastre, IGN) and the precision surveys of surveyors.
+
+## Technical implementation
+
+The development of the portal was marked by a pioneering desire to adopt standards for large-scale data dissemination.
+
+- **Web mapping pioneer**: The Géofoncier portal was one of the first major platforms in France to consume tiled base maps from IGN. These WMTS feeds, set up just weeks before the launch of the first version of the portal, offered an unprecedented navigation fluidity for the time, contrasting with the loading times of classic WMS feeds.
+- **OGC Interoperability**: The architecture relies on the massive consumption and redistribution of standard feeds (WMS, WMTS, WFS). This allows boundary data to be integrated directly into surveyors' business software or third-party GIS like QGIS.
+- **Spatial data engineering**: The backend relies on a robust stack, using PostGIS for the management of complex geometries and huge volumes of transactional data. Synchronization pipelines ensure the regular updating of cadastral layers and boundary survey files. This infrastructure was developed in partnership with the <a href="https://www.brgm.fr/en" target="_blank">BRGM</a>.
+- **API Ecosystem**: The platform has evolved towards an "API-first" model, allowing the exposure of web services for searching cadastral references or automatically retrieving land information for business applications.

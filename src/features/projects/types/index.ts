@@ -5,4 +5,5 @@ export interface ProjectMeta {
   tags: string[];
   repoUrl?: string;
   liveUrl?: string;
+  year: number;
 }

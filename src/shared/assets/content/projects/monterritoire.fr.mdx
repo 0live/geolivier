@@ -1,0 +1,30 @@
+---
+title: "MonTerritoire"
+description: "Application Web-SIG métier destinée aux collectivités territoriales pour la gestion du foncier, de l'urbanisme et du patrimoine."
+tags: ["PostGIS", "MapServer", "Leaflet", "jQuery", "PHP"]
+liveUrl: "https://www.monterritoire.fr"
+year: 2016
+---
+
+import monterritoireImage from "./img/monterritoire.webp";
+
+<img
+  src={monterritoireImage}
+  alt="MonTerritoire.fr"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Un hub cartographique pour les collectivités
+
+Ce projet a consisté à outiller plus de 700 collectivités avec un environnement Web-SIG centralisé et conforme aux évolutions réglementaires du secteur. Le défi technique résidait dans l'agrégation et la synchronisation performante de bases de données massives (Cadastre, DVF, GPU) pour offrir une consultation fluide en temps réel. La solution centralise l'intelligence territoriale en agrégeant des thématiques clés comme le foncier (parcelles), l'urbanisme (GPU) et les transactions immobilières (DVF). Elle intègre des outils d'aide à la décision avancés, allant de l'analyse spatiale multi-couches à la navigation immersive via Google Street View et Mapillary.
+
+## Implémentation technique
+
+- **Ingénierie de données** : Intégration et normalisation des flux hétérogènes (MAJIC, GPU, DVF, BAN) via des processus automatisés pour garantir la mise à jour régulière des référentiels.
+- **Services web géographiques** : Mise en place d'une architecture de services web OGC permettant l'accès aux données cartographiques.
+- **Développement de modules métiers** : Mise en place d'outils spécifiques pour l'instruction du droit des sols (ADS), le diagnostic de voirie et la gestion des interventions terrain.
+- **Architecture d'interopérabilité** : Développement d'une stack d'APIs géographiques (OpenUrba, Cadastre) permettant l'échange de données structurées avec les logiciels tiers.
+- **Stack technologique** : Architecture backend articulée autour de PHP et PostGIS pour le traitement spatial, avec une interface frontale optimisée pour la manipulation de gros volumes de données vecteurs.

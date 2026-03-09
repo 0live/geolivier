@@ -1,0 +1,30 @@
+---
+title: "MonTerritoire"
+description: "Business Web-GIS application for local authorities for land, urban planning, and heritage management."
+tags: ["PostGIS", "MapServer", "Leaflet", "jQuery", "PHP"]
+liveUrl: "https://www.monterritoire.fr"
+year: 2016
+---
+
+import monterritoireImage from "./img/monterritoire.webp";
+
+<img
+  src={monterritoireImage}
+  alt="MonTerritoire.fr"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## A cartographic hub for local authorities
+
+This project involved equipping over 700 local authorities with a centralized Web-GIS environment that complies with the sector's regulatory changes. The technical challenge lay in the high-performance aggregation and synchronization of massive databases (Cadastre, DVF, GPU) to offer fluid real-time consultation. The solution centralizes territorial intelligence by aggregating key themes such as land (parcels), urban planning (GPU), and real estate transactions (DVF). It integrates advanced decision-support tools, ranging from multi-layer spatial analysis to immersive navigation via Google Street View and Mapillary.
+
+## Technical implementation
+
+- **Data Engineering**: Integration and standardization of heterogeneous feeds (MAJIC, GPU, DVF, BAN) via automated processes to guarantee the regular updating of repositories.
+- **Geographic web services**: Setup of an OGC web services architecture allowing access to cartographic data.
+- **Business modules development**: Implementation of specific tools for the instruction of land use rights (ADS), road diagnostics, and field intervention management.
+- **Interoperability architecture**: Development of a stack of geographic APIs (OpenUrba, Cadastre) allowing the exchange of structured data with third-party software.
+- **Technology stack**: Backend architecture built around PHP and PostGIS for spatial processing, with a frontend interface optimized for handling large volumes of vector data.

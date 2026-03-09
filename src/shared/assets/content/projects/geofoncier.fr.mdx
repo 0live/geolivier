@@ -1,0 +1,33 @@
+---
+title: "Portail Géofoncier"
+description: "Le référentiel national de la donnée foncière et du bornage."
+tags: ["PostGIS", "jQuery", "OpenLayers", "Python", "GDAL"]
+liveUrl: "https://www.geofoncier.fr"
+year: 2013
+---
+
+import geofoncierImage from "./img/geofoncier.webp";
+
+<img
+  src={geofoncierImage}
+  alt="Portail Géofoncier"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## La dématérialisation du foncier au service de l'intérêt général
+
+L'enjeu premier du Portail Géofoncier, piloté par l'Ordre des Géomètres-Experts (OGE), a été de transformer une profession de terrain en un acteur central de la donnée numérique géographique. Le défi consistait à centraliser et rendre accessibles des millions de données de bornage et de limites de propriété, autrefois dispersées dans des archives locales.
+
+Au-delà de la simple consultation, le portail a dû répondre à des enjeux de sécurité juridique et de transparence. Il permet aujourd'hui aux particuliers de connaître l'historique d'une parcelle et aux professionnels (notaires, collectivités, aménageurs) d'accéder à des informations cruciales comme les zones de risques, les documents d'urbanisme (PLU) et les mutations immobilières (DVF). La plateforme joue un rôle de médiateur technique entre les bases de données étatiques (Cadastre, IGN) et les relevés de précision des géomètres.
+
+## Implémentation technique
+
+Le développement du portail a été marqué par une volonté précurseur d'adopter les standards de diffusion de données à grande échelle.
+
+- **Pionnier du Web mapping** : Le portail Géofoncier a été l'une des premières plateformes d'envergure en France à consommer les fonds de cartes tuilés de l'IGN. Ces flux WMTS, mis en place seulement quelques semaines avant le lancement de la première version du portail, ont permis d'offrir une fluidité de navigation inédite pour l'époque, contrastant avec les temps de chargement des flux WMS classiques.
+- **Interopérabilité OGC** : L'architecture repose sur une consommation massive et une redistribution de flux standards (WMS, WMTS, WFS). Cela permet d'intégrer les données de bornage directement dans les logiciels métiers des géomètres ou dans des SIG tiers comme QGIS.
+- **Ingénierie de données spatiale** : Le backend s'appuie sur une stack robuste, utilisant PostGIS pour la gestion de géométries complexes et de gros volumes de données transactionnelles. Des pipelines de synchronisation assurent la mise à jour régulière des couches cadastrales et des dossiers de bornage. Cette infrastructure a été développée en partenariat avec le <a href="https://www.brgm.fr/fr" target="_blank">BRGM</a>.
+- **Écosystème API** : La plateforme a évolué vers un modèle "API-first", permettant l'exposition de services web pour la recherche de références cadastrales ou la récupération automatisée d'informations foncières pour les applications métiers.
