@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { useI18n } from "@/providers/I18nProvider";
+import { Button } from "@/shared/components/ui/button";
+import { useI18n } from "@/app/providers/I18nProvider";
 import { Globe } from "lucide-react";
 
 export function LanguageSelector() {

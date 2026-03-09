@@ -4,7 +4,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle
-} from "@/components/ui/card";
+} from "@/shared/components/ui/card";
 import { ExternalLink, Github } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { Link, useLoaderData } from "react-router";

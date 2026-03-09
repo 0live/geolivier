@@ -1,5 +1,5 @@
-import { MdxLayout } from "@/components/layout/MdxLayout";
-import { Spinner } from "@/components/ui/spinner";
+import { MdxLayout } from "@/shared/components/layout/MdxLayout";
+import { Spinner } from "@/shared/components/ui/spinner";
 import { ArrowLeft } from "lucide-react";
 import type { ComponentType } from "react";
 import { Suspense } from "react";

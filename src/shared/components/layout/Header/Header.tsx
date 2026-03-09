@@ -1,4 +1,4 @@
-import { ThemeToggle } from "@/components/ui/ThemeToggl";
+import { ThemeToggle } from "@/shared/components/ui/ThemeToggl";
 import { MapPin } from "lucide-react";
 import { Link } from "react-router";
 import { LanguageSelector } from "../LanguageSelector";

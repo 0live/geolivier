@@ -3,8 +3,8 @@ import {
   SheetContent,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { ThemeToggle } from "@/components/ui/ThemeToggl";
+} from "@/shared/components/ui/sheet";
+import { ThemeToggle } from "@/shared/components/ui/ThemeToggl";
 import { Menu } from "lucide-react";
 import { LanguageSelector } from "../LanguageSelector";
 import { NavLinks } from "./NavLinks";

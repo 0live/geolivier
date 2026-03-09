@@ -1,4 +1,4 @@
-import { Page } from "@/types/Page";
+import { Page } from "@/shared/types/Page";
 import { Trans, useTranslation } from "react-i18next";
 import { Link } from "react-router";
 

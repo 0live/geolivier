@@ -3,7 +3,7 @@ import {
     CardDescription,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card";
+} from "@/shared/components/ui/card";
 import { useTranslation } from "react-i18next";
 import { Link, useLoaderData } from "react-router";
 import type { BlogMeta } from "../types";

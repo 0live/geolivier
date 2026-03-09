@@ -1,4 +1,4 @@
-import { Icons } from "@/components/ui/icons";
+import { Icons } from "@/shared/components/ui/icons";
 
 export const SocialLinks = ({ iconSizeClass = "h-5 w-5" }: { iconSizeClass?: string }) => (
   <>

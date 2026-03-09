@@ -1,6 +1,6 @@
+import type { Locale } from "@/shared/types/Locale";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import type { Locale } from "../types/Locale";
 
 type I18nProviderProps = {
   children: React.ReactNode;

@@ -1,4 +1,4 @@
-import { Page } from "@/types/Page";
+import { Page } from "@/shared/types/Page";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router";
 

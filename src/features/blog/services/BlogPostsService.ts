@@ -1,9 +1,9 @@
-import { MdxContentManager } from "@/lib/mdxManager";
+import { MdxContentManager } from "@/shared/lib/mdxManager";
 import type { ComponentType, LazyExoticComponent } from "react";
 import type { BlogMeta } from "../types";
 
 export class BlogPostsService {
-  private static blogLazy = import.meta.glob("../../../assets/content/blog/*.mdx");
+  private static blogLazy = import.meta.glob("../../../shared/assets/content/blog/*.mdx");
   private static mdxManager = new MdxContentManager<BlogMeta>(this.blogLazy);
 
   static async fetchAll(lang: string): Promise<BlogMeta[]> {

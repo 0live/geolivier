@@ -1,4 +1,4 @@
-import "@/config/i18n"; // Import i18n configuration
+import "@/app/config/i18n"; // Import i18n configuration
 import { I18nProvider } from "./I18nProvider";
 import { QueryProvider } from "./QueryProvider";
 import { ThemeProvider } from "./ThemeProvider";

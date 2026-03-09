@@ -1,5 +1,5 @@
-import App from "@/App";
-import i18n from "@/config/i18n";
+import App from "@/app/App";
+import i18n from "@/app/config/i18n";
 import { AboutView } from "@/features/about";
 import { BlogIndex, BlogPost, BlogPostsService } from "@/features/blog";
 import { HomeView } from "@/features/home";

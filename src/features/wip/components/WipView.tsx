@@ -1,4 +1,4 @@
-import { Spinner } from "@/components/ui/spinner";
+import { Spinner } from "@/shared/components/ui/spinner";
 import { Wrench } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
