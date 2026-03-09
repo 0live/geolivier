@@ -1,0 +1,31 @@
+---
+title: "Coastal and Marine Portal"
+description: "Design of a 3D WebGIS for marine cadastre and coastal usage management."
+tags: ["PostGIS", "3D", "MapServer", "QGIS", "ExtJS", "FME"]
+---
+
+import plmImage from "./img/plm_en.webp";
+
+<img
+  src={plmImage}
+  alt="Coastal and Marine Portal in 3D"
+  className="w-full h-auto aspect-video rounded-xl shadow-lg border border-border bg-muted object-cover my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## An unprecedented marine cadastre project
+
+The objective of this mission was to transpose the principles of terrestrial land registry to the maritime space
+in order to centralize the management of rights and uses on the coastal strip.
+The institutional challenge lay in mobilizing and coordinating around forty stakeholders
+with divergent interests, such as the National Navy, IFREMER, and various local authorities, to collect their data.
+Technically, the major challenge was to transform a mass of scattered textual regulatory information into a coherent geographical reference system, visualizable in 3D, at a time when 3D GIS tools were not yet mature.
+
+## Technical implementation
+
+- **Data Engineering**: Integration and standardization of heterogeneous feeds (Open Data, WFS feeds, flat files) from around forty national and local partners.
+- **ETL Automation**: Setup of automated processing pipelines with FME for converting regulatory data into geographical objects and generating underwater 3D data.
+- **WebGIS Development**: Creation of a platform with an administration interface, relying on ExtJS, a reference framework at the time, and the Google Earth API for 3D visualization.
+- **Backend Architecture**: Stack built around PHP for business logic, PostGIS for complex spatial storage, and MapServer for broadcasting cartographic feeds to OGC standards.

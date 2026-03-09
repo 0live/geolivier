@@ -1,0 +1,31 @@
+---
+title: "Portail du Littoral et de la Mer"
+description: "Conception d'un WebSIG 3D pour la gestion du cadastre marin et des usages côtiers."
+tags: ["PostGIS", "3D", "MapServer", "QGIS", "ExtJS", "FME"]
+---
+
+import plmImage from "./img/plm_fr.webp";
+
+<img
+  src={plmImage}
+  alt="Portail du Littoral et de la Mer en 3D"
+  className="w-full h-auto aspect-video rounded-xl shadow-lg border border-border bg-muted object-cover my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Un projet de cadastre marin inédit
+
+L'objectif de cette mission était de transposer les principes du cadastre foncier terrestre à l'espace maritime
+afin de centraliser la gestion des droits et des usages sur la bande littorale.
+Le challenge institutionnel a résidé dans la mobilisation et la coordination d'une quarantaine d'acteurs
+aux intérêts divergents, tels que la Marine Nationale, l'IFREMER et diverses collectivités, pour collecter leurs données.
+Sur le plan technique, le défi majeur fut de transformer une masse d'informations réglementaires textuelles et disparates en un référentiel géographique cohérent et visualisable en 3D à une période où les outils SIG 3D n'étaient pas encore matures.
+
+## Implémentation technique
+
+- **Ingénierie de données** : Intégration et normalisation de flux hétérogènes (Open Data, flux WFS, fichiers plats) issus d’une quarantaine de partenaires nationaux et locaux.
+- **Automatisation ETL** : Mise en place de pipelines de traitements automatisés avec FME pour la conversion de données réglementaires en objets géographiques et la génération de données 3D sous-marines.
+- **Développement WebSIG** : Création d'une plateforme avec interface d'administration, s'appuyant sur ExtJS, framework de référence à l'époque, et l'API Google Earth pour la visualisation 3D.
+- **Architecture Backend** : Stack articulée autour de PHP pour la logique métier, PostGIS pour le stockage spatial complexe et MapServer pour la diffusion des flux cartographiques aux standards OGC.
