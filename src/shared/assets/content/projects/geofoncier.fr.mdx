@@ -1,7 +1,7 @@
 ---
 title: "Portail Géofoncier"
 description: "Le référentiel national de la donnée foncière et du bornage."
-tags: ["PostGIS", "jQuery", "OpenLayers", "Python", "GDAL"]
+tags: ["PostGIS", "jQuery", "OpenLayers", "Python", "GDAL", "BigData", "OGC"]
 liveUrl: "https://www.geofoncier.fr"
 year: 2013
 ---
@@ -27,7 +27,7 @@ Au-delà de la simple consultation, le portail a dû répondre à des enjeux de 
 
 Le développement du portail a été marqué par une volonté précurseur d'adopter les standards de diffusion de données à grande échelle.
 
-- **Pionnier du Web mapping** : Le portail Géofoncier a été l'une des premières plateformes d'envergure en France à consommer les fonds de cartes tuilés de l'IGN. Ces flux WMTS, mis en place seulement quelques semaines avant le lancement de la première version du portail, ont permis d'offrir une fluidité de navigation inédite pour l'époque, contrastant avec les temps de chargement des flux WMS classiques.
-- **Interopérabilité OGC** : L'architecture repose sur une consommation massive et une redistribution de flux standards (WMS, WMTS, WFS). Cela permet d'intégrer les données de bornage directement dans les logiciels métiers des géomètres ou dans des SIG tiers comme QGIS.
-- **Ingénierie de données spatiale** : Le backend s'appuie sur une stack robuste, utilisant PostGIS pour la gestion de géométries complexes et de gros volumes de données transactionnelles. Des pipelines de synchronisation assurent la mise à jour régulière des couches cadastrales et des dossiers de bornage. Cette infrastructure a été développée en partenariat avec le <a href="https://www.brgm.fr/fr" target="_blank">BRGM</a>.
+- **Pionnier du Web mapping** : Le portail Géofoncier a été l'une des premières plateformes d'envergure en France à consommer les fonds de cartes tuilés de l'IGN. Ces flux WMTS, mis en place seulement quelques semaines avant le lancement de la première version du portail, ont permis d'offrir une fluidité de navigation inédite pour l'époque.
+- **Interopérabilité OGC** : Des milliers de plans papiers ont été numérisés et géolocalisés, pour être mis à disposition via des flux standardisés (WMS, WMTS, WFS). Cela permet d'intégrer les données de bornage directement dans les logiciels métiers des géomètres ou dans des SIG tiers comme QGIS.
+- **Ingénierie de données spatiale** : Le backend s'appuie sur une stack Python robuste, utilisant PostGIS pour la gestion de géométries complexes et de gros volumes de données transactionnelles. Des pipelines de synchronisation assurent la mise à jour régulière des couches cadastrales et des dossiers de bornage. Cette infrastructure a été développée en partenariat avec le <a href="https://www.brgm.fr/fr" target="_blank">BRGM</a>.
 - **Écosystème API** : La plateforme a évolué vers un modèle "API-first", permettant l'exposition de services web pour la recherche de références cadastrales ou la récupération automatisée d'informations foncières pour les applications métiers.

@@ -1,7 +1,18 @@
 ---
 title: "Portail du Littoral et de la Mer"
 description: "Conception d'un WebSIG 3D pour la gestion du cadastre marin et des usages côtiers."
-tags: ["PostGIS", "3D", "MapServer", "QGIS", "ExtJS", "FME", "Google Earth"]
+tags:
+  [
+    "PostGIS",
+    "3D",
+    "MapServer",
+    "QGIS",
+    "ExtJS",
+    "FME",
+    "Google Earth",
+    "OpenLayers",
+    "PHP",
+  ]
 year: 2014
 ---
 
@@ -28,5 +39,5 @@ Sur le plan technique, le défi majeur fut de transformer une masse d'informatio
 
 - **Ingénierie de données** : Intégration et normalisation de flux hétérogènes (Open Data, flux WFS, fichiers plats) issus d’une quarantaine de partenaires nationaux et locaux.
 - **Automatisation ETL** : Mise en place de pipelines de traitements automatisés avec FME pour la conversion de données réglementaires en objets géographiques et la génération de données 3D sous-marines.
-- **Développement WebSIG** : Création d'une plateforme avec interface d'administration, s'appuyant sur ExtJS, framework de référence à l'époque, et l'API Google Earth pour la visualisation 3D.
+- **Développement WebSIG** : Création d'une plateforme avec interface d'administration, s'appuyant sur GeoExtJS (ExtJS + OpenLayers), framework de référence à l'époque, et l'API Google Earth pour la visualisation 3D.
 - **Architecture Backend** : Stack articulée autour de PHP pour la logique métier, PostGIS pour le stockage spatial complexe et MapServer pour la diffusion des flux cartographiques aux standards OGC.
