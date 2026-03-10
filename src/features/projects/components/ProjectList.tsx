@@ -1,9 +1,9 @@
 import {
-    Card,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
+  Card,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
 } from "@/shared/components/ui/card";
 import { ExternalLink, Github } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -60,6 +60,18 @@ export function ProjectList({ projects }: { projects: ProjectMeta[] }) {
               >
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Live
+              </a>
+            )}
+            {project.publicationUrl && (
+              <a
+                href={project.publicationUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center text-sm text-primary hover:text-primary/80 transition-colors"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Publication
               </a>
             )}
           </CardFooter>
