@@ -1,10 +1,10 @@
-import { Button } from "@/shared/components/ui/button";
 import {
-    Combobox,
-    ComboboxContent,
-    ComboboxInput,
-    ComboboxItem,
-    ComboboxList,
+  Combobox,
+  ComboboxContent,
+  ComboboxItem,
+  ComboboxList,
+  ComboboxMultiInput,
+  useComboboxAnchor
 } from "@/shared/components/ui/combobox";
 import { useTranslation } from "react-i18next";
 
@@ -14,7 +14,6 @@ interface ProjectFiltersProps {
   selectedTags: string[];
   selectedYears: number[];
   setProjectFilters: (filters: { tags?: string[]; years?: number[] }) => void;
-  clearProjectFilters: () => void;
 }
 
 export function ProjectFilters({
@@ -23,9 +22,10 @@ export function ProjectFilters({
   selectedTags,
   selectedYears,
   setProjectFilters,
-  clearProjectFilters,
 }: ProjectFiltersProps) {
   const { t } = useTranslation();
+  const tagsAnchor = useComboboxAnchor();
+  const yearsAnchor = useComboboxAnchor();
 
   return (
     <div className="flex flex-col sm:flex-row gap-4 bg-card/50 p-4 rounded-xl border border-primary/10 shadow-sm backdrop-blur-sm -mx-2 sm:mx-0">
@@ -35,8 +35,13 @@ export function ProjectFilters({
           value={selectedTags}
           onValueChange={(val) => setProjectFilters({ tags: val as string[] })}
         >
-          <ComboboxInput placeholder={t("filters.tags", "Select tags...")} />
-          <ComboboxContent>
+          <ComboboxMultiInput 
+            ref={tagsAnchor}
+            values={selectedTags}
+            showClear
+            placeholder={selectedTags.length > 0 ? "" : t("filters.tags", "Select tags...")} 
+          />
+          <ComboboxContent anchor={tagsAnchor}>
             <ComboboxList>
               {availableTags.map((tag) => (
                 <ComboboxItem key={tag} value={tag}>
@@ -53,8 +58,13 @@ export function ProjectFilters({
           value={selectedYears.map(String)}
           onValueChange={(val) => setProjectFilters({ years: val.map(Number) })}
         >
-          <ComboboxInput placeholder={t("filters.years", "Select years...")} />
-          <ComboboxContent>
+          <ComboboxMultiInput 
+            ref={yearsAnchor}
+            values={selectedYears.map(String)}
+            showClear
+            placeholder={selectedYears.length > 0 ? "" : t("filters.years", "Select years...")} 
+          />
+          <ComboboxContent anchor={yearsAnchor}>
             <ComboboxList>
               {availableYears.map((year) => (
                 <ComboboxItem key={year} value={String(year)}>
@@ -65,11 +75,6 @@ export function ProjectFilters({
           </ComboboxContent>
         </Combobox>
       </div>
-      {(selectedTags.length > 0 || selectedYears.length > 0) && (
-        <Button variant="ghost" onClick={clearProjectFilters} className="sm:self-end">
-          {t("filters.clear", "Clear")}
-        </Button>
-      )}
     </div>
   );
 }

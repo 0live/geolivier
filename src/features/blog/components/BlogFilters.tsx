@@ -1,10 +1,10 @@
-import { Button } from "@/shared/components/ui/button";
 import {
-    Combobox,
-    ComboboxContent,
-    ComboboxInput,
-    ComboboxItem,
-    ComboboxList,
+  Combobox,
+  ComboboxContent,
+  ComboboxItem,
+  ComboboxList,
+  ComboboxMultiInput,
+  useComboboxAnchor
 } from "@/shared/components/ui/combobox";
 import { Slider } from "@/shared/components/ui/slider";
 import { useTranslation } from "react-i18next";
@@ -16,7 +16,6 @@ interface BlogFiltersProps {
   maxTimestamp: number;
   dateRange: [number, number] | null;
   setBlogFilters: (filters: { tags?: string[]; dateRange?: [number, number] | null }) => void;
-  clearBlogFilters: () => void;
 }
 
 export function BlogFilters({
@@ -26,13 +25,12 @@ export function BlogFilters({
   maxTimestamp,
   dateRange,
   setBlogFilters,
-  clearBlogFilters,
 }: BlogFiltersProps) {
   const { t } = useTranslation();
-  const isFiltered = selectedTags.length > 0 || dateRange !== null;
+  const tagsAnchor = useComboboxAnchor();
 
   return (
-    <div className="flex flex-col sm:flex-row gap-6 bg-card/50 p-5 rounded-xl border border-primary/10 shadow-sm backdrop-blur-sm -mx-2 sm:mx-0 items-start sm:items-center">
+    <div className="flex flex-col sm:flex-row gap-4 bg-card/50 p-4 rounded-xl border border-primary/10 shadow-sm backdrop-blur-sm -mx-2 sm:mx-0">
       <div className="flex-1 min-w-[240px] w-full">
         <p className="text-sm font-medium text-muted-foreground mb-2">
           {t("filters.tags", "Tags")}
@@ -42,8 +40,13 @@ export function BlogFilters({
           value={selectedTags}
           onValueChange={(val) => setBlogFilters({ tags: val as string[] })}
         >
-          <ComboboxInput placeholder={t("filters.tags_placeholder", "Select tags...")} />
-          <ComboboxContent>
+          <ComboboxMultiInput 
+            ref={tagsAnchor}
+            values={selectedTags}
+            showClear
+            placeholder={selectedTags.length > 0 ? "" : t("filters.tags_placeholder", "Select tags...")} 
+          />
+          <ComboboxContent anchor={tagsAnchor}>
             <ComboboxList>
               {availableTags.map((tag) => (
                 <ComboboxItem key={tag} value={tag}>
@@ -82,11 +85,6 @@ export function BlogFilters({
         />
       </div>
 
-      {isFiltered && (
-        <Button variant="ghost" onClick={clearBlogFilters} className="sm:mt-6 w-full sm:w-auto">
-          {t("filters.clear", "Clear")}
-        </Button>
-      )}
     </div>
   );
 }

@@ -89,6 +89,55 @@ function ComboboxInput({
   )
 }
 
+const ComboboxMultiInput = React.forwardRef<
+  HTMLDivElement,
+  React.ComponentProps<typeof ComboboxChipsInput> & {
+    showTrigger?: boolean
+    showClear?: boolean
+    values?: string[]
+  }
+>(({
+  className,
+  children,
+  disabled = false,
+  showTrigger = true,
+  showClear = false,
+  values = [],
+  ...props
+}, ref) => {
+  return (
+    <ComboboxChips ref={ref} className={cn("w-auto pr-1", className)}>
+      {values.map((v) => (
+        <ComboboxChip key={v}>
+          {v}
+        </ComboboxChip>
+      ))}
+      <ComboboxChipsInput 
+        disabled={disabled} 
+        {...props} 
+        className="bg-transparent ml-1 placeholder:text-muted-foreground"
+      />
+      <div className="ml-auto flex items-center gap-1 pl-2">
+        {showClear && values.length > 0 && <ComboboxClear disabled={disabled} />}
+        {showTrigger && (
+          <Button
+            size="icon-xs"
+            variant="ghost"
+            asChild
+            data-slot="input-group-button"
+            className="data-pressed:bg-transparent"
+            disabled={disabled}
+          >
+            <ComboboxTrigger />
+          </Button>
+        )}
+      </div>
+      {children}
+    </ComboboxChips>
+  )
+})
+ComboboxMultiInput.displayName = "ComboboxMultiInput"
+
 function ComboboxContent({
   className,
   side = "bottom",
@@ -224,13 +273,14 @@ function ComboboxSeparator({
   )
 }
 
-function ComboboxChips({
-  className,
-  ...props
-}: React.ComponentPropsWithRef<typeof ComboboxPrimitive.Chips> &
-  ComboboxPrimitive.Chips.Props) {
+const ComboboxChips = React.forwardRef<
+  HTMLDivElement,
+  React.ComponentPropsWithRef<typeof ComboboxPrimitive.Chips> &
+    ComboboxPrimitive.Chips.Props
+>(({ className, ...props }, ref) => {
   return (
     <ComboboxPrimitive.Chips
+      ref={ref}
       data-slot="combobox-chips"
       className={cn(
         "flex min-h-9 flex-wrap items-center gap-1.5 rounded-md border border-input bg-transparent bg-clip-padding px-2.5 py-1.5 text-sm shadow-xs transition-[color,box-shadow] focus-within:border-ring focus-within:ring-[3px] focus-within:ring-ring/50 has-aria-invalid:border-destructive has-aria-invalid:ring-[3px] has-aria-invalid:ring-destructive/20 has-data-[slot=combobox-chip]:px-1.5 dark:bg-input/30 dark:has-aria-invalid:border-destructive/50 dark:has-aria-invalid:ring-destructive/40",
@@ -239,7 +289,8 @@ function ComboboxChips({
       {...props}
     />
   )
-}
+})
+ComboboxChips.displayName = "ComboboxChips"
 
 function ComboboxChip({
   className,
@@ -274,7 +325,6 @@ function ComboboxChip({
 
 function ComboboxChipsInput({
   className,
-  children,
   ...props
 }: ComboboxPrimitive.Input.Props) {
   return (
@@ -291,7 +341,7 @@ function useComboboxAnchor() {
 }
 
 export {
-  Combobox, ComboboxChip, ComboboxChips, ComboboxChipsInput, ComboboxCollection, ComboboxContent, ComboboxEmpty, ComboboxGroup, ComboboxInput, ComboboxItem, ComboboxLabel, ComboboxList, ComboboxSeparator, ComboboxTrigger,
+  Combobox, ComboboxChip, ComboboxChips, ComboboxChipsInput, ComboboxCollection, ComboboxContent, ComboboxEmpty, ComboboxGroup, ComboboxInput, ComboboxItem, ComboboxLabel, ComboboxList, ComboboxMultiInput, ComboboxSeparator, ComboboxTrigger,
   ComboboxValue,
   useComboboxAnchor
 }
