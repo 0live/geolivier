@@ -1,0 +1,30 @@
+---
+title: "Analyse de visibilité : Cathédrale de Chartres"
+description: "Étude géomatique d'impact sur les cônes de vue et les visibilités de la cathédrale dans un rayon de 300 km."
+tags: ["Analyse spatiale", "CesiumJS", "PostGIS", "SIG", "Photogrammétrie"]
+year: 2015
+---
+
+import chartresImage from "./img/chartres.webp";
+
+<img
+  src={chartresImage}
+  alt="Analyse de visibilité : Cathédrale de Chartres"
+  className="w-full h-auto max-h-[300px] object-cover rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Analyse des cônes de vue à grande échelle
+
+L'objectif était de quantifier et qualifier les visibilités sur la cathédrale de Chartres sur une zone d'étude de 300 km de rayon. Le défi technique résidait dans le traitement massif de 900 millions de cellules altimétriques et la reconstruction d'un état historique du territoire pour mesurer précisément l'impact de l'urbanisation sur les paysages.
+
+## Implémentation technique
+
+- **Modélisation de visibilité** : Mise en œuvre de calculs de visibilité sur 70 600 hectares intégrant les corrections de courbure terrestre et de réfraction atmosphérique pour garantir la précision des résultats à longue distance.
+- **Analyse temporelle** : Création d'un Modèle Numérique de Surface (MNS) "année 50" par analyse de photographies aériennes d'époque, permettant de quantifier les pertes de visibilité liées au développement urbain des 50 dernières années.
+- **Aide à l'urbanisme** : Calcul des hauteurs de construction maximales autorisées (hauteurs disponibles) pour assurer la non-dégradation des cônes de vue actuels.
+- **Analyse spatiale** : Stockage et traitement des données rasters directement en base de données en combinant les fonctions d'analyses spatiales natives de PostGIS.
+- **Optimisation de calcul** : Gestion de 15 jours de temps-machine pour le traitement des visibilités brutes sur l'ensemble du jeu de données altimétriques.
+- **Visualisation** : Utilisation de CesiumJS pour visualiser les résultats de l'analyse de visibilité et les cônes de vue en 3D.

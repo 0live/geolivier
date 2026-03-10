@@ -1,0 +1,30 @@
+---
+title: "Visibility Analysis: Chartres Cathedral"
+description: "Geomatic impact study on view cones and visibility of the cathedral within a 300 km radius."
+tags: ["Spatial analysis", "CesiumJS", "PostGIS", "GIS", "Photogrammetry"]
+year: 2015
+---
+
+import chartresImage from "./img/chartres.webp";
+
+<img
+  src={chartresImage}
+  alt="Visibility Analysis: Chartres Cathedral"
+  className="w-full h-auto max-h-[300px] object-cover rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Large-scale view cones analysis
+
+The objective was to quantify and qualify the visibilities on the Chartres Cathedral over a study area with a 300 km radius. The technical challenge lay in the massive processing of 900 million elevation cells and the reconstruction of a historical state of the territory to precisely measure the impact of urbanization on landscapes.
+
+## Technical implementation
+
+- **Visibility Modeling**: Implementation of visibility calculations over 70,600 hectares, integrating Earth curvature and atmospheric refraction corrections to guarantee the accuracy of results over long distances.
+- **Temporal Analysis**: Creation of a "1950s" Digital Surface Model (DSM) by analyzing historical aerial photographs, making it possible to quantify the visibility losses related to urban development over the last 50 years.
+- **Urban Planning Support**: Calculation of the maximum authorized building heights (available heights) to ensure the non-degradation of current view cones.
+- **Spatial Analysis**: Storage and processing of raster data directly in the database by combining PostGIS native spatial analysis functions.
+- **Calculation Optimization**: Management of 15 days of machine time to process raw visibilities over the entire elevation dataset.
+- **Visualization**: Use of CesiumJS to visualize the results of the visibility analysis and the 3D view cones.
