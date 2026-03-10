@@ -14,6 +14,7 @@ interface ProjectFiltersProps {
   selectedTags: string[];
   selectedYears: number[];
   setProjectFilters: (filters: { tags?: string[]; years?: number[] }) => void;
+  clearProjectFilters: () => void;
 }
 
 export function ProjectFilters({

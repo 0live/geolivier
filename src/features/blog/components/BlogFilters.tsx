@@ -16,6 +16,7 @@ interface BlogFiltersProps {
   maxTimestamp: number;
   dateRange: [number, number] | null;
   setBlogFilters: (filters: { tags?: string[]; dateRange?: [number, number] | null }) => void;
+  clearBlogFilters: () => void;
 }
 
 export function BlogFilters({
