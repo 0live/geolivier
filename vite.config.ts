@@ -16,8 +16,10 @@ export default defineConfig({
     tailwindcss(),
   ],
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+    alias: [
+      { find: "@/components", replacement: path.resolve(__dirname, "./src/shared/components") },
+      { find: "@/lib", replacement: path.resolve(__dirname, "./src/shared/lib") },
+      { find: "@", replacement: path.resolve(__dirname, "./src") },
+    ],
   },
 });
