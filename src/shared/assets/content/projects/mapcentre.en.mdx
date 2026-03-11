@@ -1,0 +1,38 @@
+---
+title: "MapCentre for MSF"
+description: "A single entry point for mapping at Médecins Sans Frontières."
+tags: ["ArcGIS", "Symfony", "Vue.js", "FME", "Leaflet", "Mapbox"]
+year: 2018
+---
+
+## A single point of access for geographic data
+
+Developed for the GIS Centre of Médecins Sans Frontières (MSF), the MapCentre serves as a one-stop shop for accessing all of the organization's geographic resources. The main objective is to support teams, both at headquarters and in the field, in their operational decision-making through tools adapted to humanitarian challenges. Another key goal was to provide a platform accessible enough to raise awareness among non-technical users about the added value of mapping in their daily operations.
+
+The major challenge was to centralize and structure a vast amount of data produced daily for various international missions, while ensuring optimal accessibility for different types of users (logisticians, program managers, cartographers, etc.) and in contexts where connectivity can be limited.
+
+## Key features
+
+The platform is structured around three main pillars:
+
+- **Map Catalogue**: An online library gathering over 3,000 static maps (reference, logistics, security, or epidemiological analysis) ready for viewing or downloading.
+- **GeoApps Portal**: Centralized access to web mapping applications with advanced business features (epidemiology, security, logistics, etc.).
+- **Activation Portal**: A "ticketing"-inspired system allowing field teams to easily request GIS support from the experts in the GIS unit.
+
+import msfImage from "./img/msfmapcentre.webp";
+
+<img
+  src={msfImage}
+  alt="MapCentre for MSF"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Technical implementation
+
+- **Software architecture**: Implementation of a technical infrastructure combining proprietary mapping tools (ArcGIS Server/Portal, requiring Windows servers) for the database and web mapping services.
+- **Data management**: Deployment of cleaning pipelines (using FME Server), homogenization, and structuring of spatial data to ensure the reliability of information distributed to coordination teams.
+- **Web development**: Use of the Symfony framework for hosting content pages and independent web applications. The user interface was developed with Vue.js.
+- **Mapping applications**: Development of simple applications via the Esri suite (Experience Builder/StoryMaps) and more complex applications with Open Source technologies (Vue/Leaflet/Mapbox) leveraging the web services of the ArcGIS Server REST API for data.

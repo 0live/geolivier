@@ -1,0 +1,38 @@
+---
+title: "MapCentre pour MSF"
+description: "Un point d'entrée unique pour la cartographie chez Médecins Sans Frontières."
+tags: ["ArcGIS", "Symfony", "Vue.js", "FME", "Leaflet", "Mapbox"]
+year: 2018
+---
+
+## Un guichet unique pour les données géographiques
+
+Développé pour le GIS Centre de Médecins Sans Frontières, le MapCentre sert de guichet unique pour l'accès à l'ensemble des ressources géographiques de l'organisation. L'objectif principal est de soutenir les équipes, tant au siège que sur le terrain, dans leur prise de décision opérationnelle grâce à des outils adaptés aux enjeux humanitaires. L'enjeu consistait également à fournir une plateforme suffisamment accessible pour sensibiliser des utilisateurs non techniques à la plus-value de la cartographie dans leurs opérations quotidiennes.
+
+Le défi majeur a été de centraliser et de structurer une immense quantité de données produites quotidiennement pour les différentes missions internationales, tout en garantissant une accessibilité optimale à différents types d'utilisateurs (logisticiens, chargés de programme, cartographes, etc.) et dans des contextes de connectivité parfois limités.
+
+## Fonctionnalités clés
+
+La plateforme s'articule autour de trois piliers principaux :
+
+- **Catalogue de cartes (Map Catalogue)** : Une bibliothèque en ligne regroupant plus de 3 000 cartes statiques (référence, logistique, sécurité ou analyses épidémiologiques) prêtes à la consultation ou au téléchargement.
+- **Portail des GeoApps** : Un accès centralisé à des applications web cartographiques dotées de fonctionnalités métier avancées (épidémiologie, sécurité, logistique, etc.).
+- **Portail d'activation** : Un système inspiré du "ticketing" permettant aux équipes terrain de formuler simplement des demandes d'appui SIG auprès des experts de l'unité GIS.
+
+import msfImage from "./img/msfmapcentre.webp";
+
+<img
+  src={msfImage}
+  alt="MapCentre pour MSF"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Implémentation technique
+
+- **Architecture logicielle** : Mise en place d'une infrastructure technique mêlant outils cartographiques propriétaires (ArcGIS Server/Portal, nécessitant des serveurs Windows) pour la base de données et les services web cartographiques.
+- **Gestion des données** : Déploiement de pipelines de nettoyage (FME Server), d'homogénéisation et de structuration des données spatiales pour assurer la fiabilité des informations diffusées aux équipes de coordination.
+- **Développement web** : Utilisation du framework Symfony pour l'hébergement des pages de contenu et des applications web indépendantes. L'interface utilisateur a été développée avec Vue.js.
+- **Applications cartographiques** : Développement d'applications simples via la suite Esri (Experience Builder/StoryMaps) et d'applications plus complexes avec des technologies Open Source (Vue/Leaflet/Mapbox) exploitant les services web de l'API REST d'ArcGIS Server pour les données.
