@@ -4,12 +4,14 @@ import { AboutView } from "@/features/about";
 import { BlogIndex, BlogPost, BlogPostsService } from "@/features/blog";
 import { HomeView } from "@/features/home";
 import { ProjectPost, ProjectsIndex, ProjectsService } from "@/features/projects";
+import { ErrorView } from "@/shared/components/layout/ErrorView";
 import { createBrowserRouter } from "react-router";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorView />,
     children: [
       {
         index: true,

@@ -16,5 +16,9 @@
   "projects.description": "Excerpts from my journey.",
   "projects.empty": "No projects yet.",
   "projects.back": "Back to projects",
-  "blog.back": "Back to blog"
+  "blog.back": "Back to blog",
+  "error.title": "Something went wrong",
+  "error.subtitle": "An unexpected error occurred. Please try again.",
+  "error.retry": "Try again",
+  "error.goHome": "Go back home"
 }
