@@ -18,7 +18,7 @@ publicationUrl: "https://www.researchgate.net/publication/281587453_Evolution_of
 
 This research project aimed to reconstruct the morphological and volumetric evolution of the Ossoue Glacier since the end of the Little Ice Age. The main challenge was to accurately quantify the retreat of this ice mass, from heterogeneous data, in the face of climate change to validate its role as a "sentinel" and regional climate proxy. <a href="https://www.researchgate.net/publication/281715707_Evolution_of_Ossoue_Glacier_French_Pyrenees_since_the_end_of_the_Little_Ice_Age" target="_blank">The study reveals an alarming acceleration of melting, forecasting a probable disappearance of the glacier by the middle of the 21st century.</a>
 
-import { Carousel3D } from "@/components/ui/carousel-3d";
+import { ResponsiveCarousel } from "@/shared/components/ui/responsive-carousel";
 
 import img1 from "./img/ossoue_1.webp";
 import img2 from "./img/ossoue_2.webp";
@@ -28,7 +28,7 @@ import img5 from "./img/ossoue_5.webp";
 import img6 from "./img/ossoue_6.webp";
 import img7 from "./img/ossoue_7.webp";
 
-<Carousel3D
+<ResponsiveCarousel
   className="my-10"
   items={[
     <img src={img1} alt="Glacier d'Ossoue 1" />,

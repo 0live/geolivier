@@ -18,7 +18,7 @@ publicationUrl: "https://www.researchgate.net/publication/281587453_Evolution_of
 
 Ce projet de recherche visait à reconstituer l'évolution morphologique et volumétrique du glacier d'Ossoue depuis la fin du Petit Âge Glaciaire. L'enjeu principal consistait à quantifier précisément le retrait de cette masse de glace, à partir de données hétérogènes, face au changement climatique pour valider son rôle de "sentinelle" et de proxy climatique régional. <a href="https://www.researchgate.net/publication/281715707_Evolution_of_Ossoue_Glacier_French_Pyrenees_since_the_end_of_the_Little_Ice_Age" target="_blank">L'étude révèle une accélération alarmante de la fonte, prévoyant une disparition probable du glacier d'ici le milieu du XXIe siècle.</a>
 
-import { Carousel3D } from "@/components/ui/carousel-3d";
+import { ResponsiveCarousel } from "@/shared/components/ui/responsive-carousel";
 
 import img1 from "./img/ossoue_1.webp";
 import img2 from "./img/ossoue_2.webp";
@@ -28,7 +28,7 @@ import img5 from "./img/ossoue_5.webp";
 import img6 from "./img/ossoue_6.webp";
 import img7 from "./img/ossoue_7.webp";
 
-<Carousel3D
+<ResponsiveCarousel
   className="my-10"
   items={[
     <img src={img1} alt="Glacier d'Ossoue 1" />,
