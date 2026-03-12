@@ -46,7 +46,3 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
-
-i18n.on('languageChanged', () => {
-  router.revalidate();
-});
