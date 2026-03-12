@@ -13,7 +13,7 @@
   "nav.about": "About",
   "blog.description": "Articles and thoughts on geomatics and code.",
   "blog.empty": "No articles yet.",
-  "projects.description": "Excerpts from my journey.",
+  "projects.description": "Snapshots of my journey.",
   "projects.empty": "No projects yet.",
   "projects.back": "Back to projects",
   "blog.back": "Back to blog",
@@ -22,5 +22,9 @@
   "error.retry": "Try again",
   "error.goHome": "Go back home",
   "filters.tags": "Select tags...",
-  "filters.clear": "Clear filters"
+  "filters.clear": "Clear filters",
+  "demo.showToast": "Click me",
+  "demo.toast.title": "I am a React component",
+  "demo.toast.description": "I am rendered in an MDX file",
+  "demo.toast.undo": "Undo"
 }

@@ -1,17 +1,27 @@
 ---
 title: "geolivier.xyz"
-description: "Mon site personnel portfolio construit avec React, Vite et MDX."
-tags: ["react", "vite", "tailwind"]
+description: "Mon site personnel portfolio construit avec React."
+tags: ["React", "Vite"]
 repoUrl: "https://github.com/0live/geolivier"
 year: 2026
 ---
 
-## geolivier.xyz : Mon premier site React
+## geolivier.xyz : Mon premier site personnel
 
-J'ai hésité à indiquer que ceci est mon premier site avec React, mais je me dis que cela peut également démontrer ma capacité à adapter les bons patterns de développement dans un environnement nouveau.
-Simple SPA, c'est l'occasion pour moi de me présenter et ce site est amené à être la vitrine d'un projet beaucoup plus conséquent sur lequel j'ai commencé à travailler récemment. Stay tuned!
+Etant en recherche d'emploi, j'ai créé ce site qui, bien que simple, me permet de présenter mon parcours de manière un peu plus didactique qu'un CV classique.
+
+Mais surtout, ce site est amené à être la vitrine d'un projet beaucoup plus conséquent sur lequel j'ai commencé à travailler récemment. Stay tuned!
 
 ## La petite feature qui sort du lot
 
 N’ayant pas envie de déployer d’architecture backend ni d’utiliser de méta-framework à ce stade, je m’appuie sur des fichiers MDX. Cela me permet de manipuler mes données avec la même flexibilité qu'avec Next.js (Markdown + composants React).
+
+import { SonnerDemo } from "@/shared/components/ui/sonner-demo";
+import { Toaster } from "@/shared/components/ui/sonner";
+
+<div className="flex justify-center">
+  <SonnerDemo />
+</div>
+<Toaster position="top-right" />
+
 Le cœur du système repose sur les capacités de Vite pour indexer automatiquement mes dossiers et transformer chaque fichier MDX en un module React indépendant. Ce système permet de générer dynamiquement la liste de mes projets en se basant uniquement sur les métadonnées des fichiers, tout en isolant chaque contenu dans un 'chunk' séparé, chargé uniquement à la consultation pour garantir une navigation fluide, tout en restant sur une simple application React. Cela sera l'occasion d'un premier post de blog!

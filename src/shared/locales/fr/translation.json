@@ -22,5 +22,9 @@
   "error.retry": "Réessayer",
   "error.goHome": "Retour à l'accueil",
   "filters.tags": "Sélectionner des tags...",
-  "filters.clear": "Effacer les filtres"
+  "filters.clear": "Effacer les filtres",
+  "demo.showToast": "Clique ici pour voir un toast",
+  "demo.toast.title": "Je suis un composant React",
+  "demo.toast.description": "Je suis rendu dans un fichier MDX",
+  "demo.toast.undo": "Annuler"
 }

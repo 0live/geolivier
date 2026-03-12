@@ -1,17 +1,27 @@
 ---
 title: "geolivier.xyz"
-description: "My personal portfolio website built with React, Vite and MDX."
-tags: ["react", "vite", "tailwind"]
+description: "My personal portfolio website built with React."
+tags: ["React", "Vite"]
 repoUrl: "https://github.com/0live/geolivier"
 year: 2026
 ---
 
-## geolivier.xyz : My first React website
+## geolivier.xyz: My first personal website
 
-I hesitated to indicate that this is my first website with React, but I think it can also demonstrate my ability to adopt good development patterns in a new environment.
-A simple SPA, it's an opportunity for me to introduce myself, and this site is meant to be the showcase for a much larger project I recently started working on. Stay tuned!
+While looking for a job, I created this site which, although simple, allows me to present my background in a more educational way than a classic CV.
 
-## The feature that stands out
+But above all, this site is intended to be the showcase for a much larger project I recently started working on. Stay tuned!
 
-Not wanting to deploy a backend architecture or use a metaframework at this stage, I rely on MDX files. This allows me to manipulate my data with the same flexibility as with Next.js (Markdown + React components).
-The core of the system relies on Vite's capabilities to automatically index my folders and transform each MDX file into an independent React module. This system makes it possible to dynamically generate the list of my projects based solely on file metadata, while isolating each content in a separate 'chunk', loaded only upon consultation to guarantee fluid navigation, while still remaining a simple React application. This will be the subject of a first blog post!
+## The little feature that stands out
+
+Not wanting to deploy a backend architecture or use a meta-framework at this stage, I rely on MDX files. This allows me to manipulate my data with the same flexibility as with Next.js (Markdown + React components).
+
+import { SonnerDemo } from "@/shared/components/ui/sonner-demo";
+import { Toaster } from "@/shared/components/ui/sonner";
+
+<div className="flex justify-center">
+  <SonnerDemo />
+</div>
+<Toaster position="top-right" />
+
+The core of the system relies on Vite's capabilities to automatically index my folders and transform each MDX file into an independent React module. This system makes it possible to dynamically generate the list of my projects based solely on the file metadata, while isolating each content in a separate 'chunk', loaded only upon consultation to ensure smooth navigation, while remaining a simple React application. This will be the occasion for a first blog post!
