@@ -20,5 +20,7 @@
   "error.title": "Something went wrong",
   "error.subtitle": "An unexpected error occurred. Please try again.",
   "error.retry": "Try again",
-  "error.goHome": "Go back home"
+  "error.goHome": "Go back home",
+  "filters.tags": "Select tags...",
+  "filters.clear": "Clear filters"
 }

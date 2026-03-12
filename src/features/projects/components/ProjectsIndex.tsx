@@ -8,16 +8,15 @@ export function ProjectsIndex() {
   const {
     filteredProjects,
     availableTags,
-    availableYears,
     selectedTags,
-    selectedYears,
     setProjectFilters,
     clearProjectFilters,
   } = useProjectFilters();
 
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-      <div className="space-y-4">
+  <div className="w-full max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
+      <div className="flex flex-col w-full lg:w-1/2">
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
           {t("nav.projects")}
         </h1>
@@ -26,16 +25,17 @@ export function ProjectsIndex() {
         </p>
       </div>
 
-      <ProjectFilters
-        availableTags={availableTags}
-        availableYears={availableYears}
-        selectedTags={selectedTags}
-        selectedYears={selectedYears}
-        setProjectFilters={setProjectFilters}
-        clearProjectFilters={clearProjectFilters}
-      />
-
-      <ProjectList projects={filteredProjects} />
+      <div className="flex flex-col w-full lg:w-1/2">
+        <ProjectFilters
+          availableTags={availableTags}
+          selectedTags={selectedTags}
+          setProjectFilters={setProjectFilters}
+          clearProjectFilters={clearProjectFilters}
+        />
+      </div>
     </div>
-  );
+
+    <ProjectList projects={filteredProjects} />
+  </div>
+);
 }
