@@ -1,0 +1,30 @@
+---
+title: "UNHCR Site Mapping"
+description: "Mapping platform for monitoring refugee sites"
+tags: ["ESRI", "Turf", "Mapbox", "PostGIS", "OpenStreetMap", "Vue.js"]
+year: 2020
+liveUrl: "https://im.unhcr.org/apps/sitemapping/#/"
+---
+
+## A strategic portal for monitoring displacement sites
+
+Developed for the UN Refugee Agency (UNHCR), the Site Mapping application serves as the central reference for visualizing and monitoring refugee and internally displaced persons (IDP) sites globally. The primary objective is to provide a global and updated view of the situation on the ground to support intervention coordination.
+
+The major challenge was to offer standardized mapping visualization despite the heterogeneity of field surveys and sites. alongside the application's development, a site mapping campaign via the <a href="https://missingmaps.org" target="_blank">Missing Maps</a> project was launched to use OpenStreetMap data when data in the UNHCR database was missing.
+
+import unhcrImage from "./img/unhcrsitemapping.webp";
+
+<img
+  src={unhcrImage}
+  alt="UNHCR Site Mapping Platform"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Technical implementation
+
+- **Technical stack**: Web interface developed with Vue, Mapbox-GL-JS, and Turf.js, with an ArcGIS Server backend for UNHCR data.
+- **Indicators**: The application calculates KPIs on health and security themes. These indicators are calculated on the client side using Turf via web-workers to avoid blocking navigation during significant calculations.
+- **OSM**: To detect sites containing relevant OSM data, <a href="https://2021.stateofthemap.org/sessions/XLDXW9/" target="_blank">a correspondence work between the NGO's data model and OSM tags</a> was performed. Once this tag list was established, a PostGIS database containing all OSM data with these tags was implemented using Imposm. This database is updated in real-time (fetching diffs every minute).

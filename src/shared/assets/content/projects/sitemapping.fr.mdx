@@ -1,0 +1,30 @@
+---
+title: "UNHCR Site Mapping"
+description: "Plateforme cartographique pour le suivi des sites de réfugiés"
+tags: ["ESRI", "Turf", "Mapbox", "PostGIS", "OpenStreetMap", "Vue.js"]
+year: 2020
+liveUrl: "https://im.unhcr.org/apps/sitemapping/#/"
+---
+
+## Un portail stratégique pour le suivi des sites de déplacement
+
+Développée pour le Haut Commissariat aux Réfugiés de l'ONU (UNHCR), l'application Site Mapping constitue la référence centrale pour la visualisation et le suivi des sites de réfugiés et de déplacés internes à l'échelle mondiale. L'objectif premier est de fournir une vision globale et actualisée de la situation sur le terrain pour soutenir la coordination des interventions.
+
+Le défi majeur a consisté à proposer une visualisation cartographique standardisée alors que les enquêtes et les sites de terrains sont hétérogènes. En parallèle du développement de l'application, une campagne de cartographie des sites via le projet <a href="https://missingmaps.org" target="_blank">Missing Maps</a> a été lancée pour utiliser les données d'OpenStreetMap quand les données dans la base de l'UNHCR étaient manquantes.
+
+import unhcrImage from "./img/unhcrsitemapping.webp";
+
+<img
+  src={unhcrImage}
+  alt="Plateforme Site Mapping du HCR"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Implémentation technique
+
+- **Stack technique**: Interface web développée avec Vue, Mapbox-GL-JS et Turf.js, backend Arcgis Server pour les données UNHCR
+- **Indicateurs**: L'application permet de calculer des KPI sur des thématiques de santé/sécurité. Ces indicateurs sont calculés côté client à l'aide de Turf via des web-workers pour ne pas bloquer la navigation lors de calculs conséquents.
+- **OSM**: Pour détecter les sites qui contiennent des données OSM en lien avec la thématique, <a href="https://2021.stateofthemap.org/sessions/XLDXW9/" target="_blank">un travail de correspondance entre le datamodel de l'ONG et les tags OSM</a> a été effectué. Une fois cette liste de tags établis, une base de données PostGIS contenant toutes les données OSM contenant ces tags a été mise en place avec Imposm. Cette base de données est mise à jour en temps réel (récupération des diffs toutes les minutes).

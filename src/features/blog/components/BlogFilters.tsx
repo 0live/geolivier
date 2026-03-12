@@ -33,9 +33,6 @@ export function BlogFilters({
   return (
     <div className="flex flex-col sm:flex-row gap-4 bg-card/50 p-4 rounded-xl border border-primary/10 shadow-sm backdrop-blur-sm -mx-2 sm:mx-0">
       <div className="flex-1 min-w-[240px] w-full">
-        <p className="text-sm font-medium text-muted-foreground mb-2">
-          {t("filters.tags", "Tags")}
-        </p>
         <Combobox
           multiple
           value={selectedTags}
