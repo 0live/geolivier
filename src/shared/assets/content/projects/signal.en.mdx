@@ -1,0 +1,23 @@
+---
+title: "Signal - Atlas Logistique"
+description: "Application for visualizing logistics vulnerability and community resilience"
+tags: ["Vue.js", "MapLibre", "D3.js", "PostGIS", "GeoServer"]
+year: 2022
+---
+
+## Analyzing Logistics Resilience
+
+The <a href="https://www.hi.org/fr/actualites/signal---un-projet-innovant-pour-renforcer-la-resilience-logistique-des-communautes-vulnerables-en-contexte-fragile">Signal</a> project, led by Atlas Logistique and Handicap International, aims to identify the degree of vulnerability and disaster recovery capacity of populations in fragile environments. The challenge is to transform complex logistics data into a framework for understanding humanitarian vulnerability to guide aid toward the most isolated or degraded areas.
+
+We designed an intuitive mapping application to centralize and visualize all the indicators produced by the project. The tool allows humanitarian actors to move from raw data to concrete spatial analysis for prioritizing their interventions.
+
+The application is structured around two major components:
+
+- **Logistics Vulnerability Index (LVI)**: A score calculated from 7 sub-indicators (road access, proximity to points of entry, mobility, etc.) allowing for the classification of areas according to their fragility.
+- **Local Logistics Environment Diagnostics**: In-depth analysis of the capacities of local supply chains and transport networks.
+
+## Technical Implementation
+
+**Data Visualization**: The interface relies on **Vue.js** for reactivity, **MapLibre GL** for mapping, and **D3.js** for generating dynamic charts and analytical dashboards. These tools allow for seamless comparison of indicators across different regions or time periods.
+
+**Vector Tiles**: Implementation of a PostGIS database coupled with GeoServer to serve massive amounts of data as vector tiles, ensuring smooth navigation and minimal infrastructure costs.

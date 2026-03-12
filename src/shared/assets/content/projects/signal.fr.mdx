@@ -1,0 +1,23 @@
+---
+title: "Signal - Atlas Logistique"
+description: "Application de visualisation de la vulnérabilité logistique et de la résilience des communautés"
+tags: ["Vue.js", "MapLibre", "D3.js", "PostGIS", "GeoServer"]
+year: 2022
+---
+
+## Analyse de la résilience logistique
+
+Le projet <a href="https://www.hi.org/fr/actualites/signal---un-projet-innovant-pour-renforcer-la-resilience-logistique-des-communautes-vulnerables-en-contexte-fragile">Signal</a>, piloté par Atlas Logistique et Handicap International, vise à identifier le degré de vulnérabilité et la capacité de relèvement des populations en contexte fragile. L'enjeu est de transformer des données logistiques complexes en une grille de lecture de la vulnérabilité humanitaire pour orienter l'aide vers les zones les plus enclavées ou dégradées.
+
+Nous avons concu une application cartographique intuitive permettant de centraliser et de visualiser l'ensemble des indicateurs produits par le projet. L'outil permet aux acteurs humanitaires de passer d'une donnée brute à une analyse spatiale concrète pour prioriser leurs interventions.
+
+L'application s'articule autour de deux composantes majeures :
+
+- **L'Indice de Vulnérabilité Logistique (IVL)** : Un score calculé à partir de 7 sous-indicateurs (accès routier, proximité des points d'entrée, mobilité, etc.) permettant de classifier les zones selon leur fragilité.
+- **Les Diagnostics de l'Environnement Logistique Local** : Des analyses approfondies sur les capacités des chaînes d'approvisionnement et des réseaux de transport locaux.
+
+## Implémentation technique
+
+**Visualisation des données** : L'interface repose sur **Vue.js** pour la réactivité, **MapLibre GL** pour la cartographie et **D3.js** pour la génération de graphiques dynamiques et de tableaux de bord analytiques. Ces outils permettent de comparer les indicateurs entre différentes régions ou périodes de manière fluide.
+
+**Tuiles vectorielles** : Mise en place d'une base PostGIS couplée à Geoserver pour servir la quantité massives de données en tuiles vectorielles, assurant une fluidité de navigation et un cout d'infrastructure minimal.

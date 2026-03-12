@@ -7,7 +7,7 @@ export function HomeView() {
 
   return (
     <div className="flex flex-col flex-1 items-center justify-center md:px-6">
-        <div className="mx-auto max-w-[800px] space-y-4 text-lg text-muted-foreground sm:text-xl text-left md:text-center mt-8">
+        <div className="mx-auto max-w-[800px] space-y-4 text-lg text-muted-foreground sm:text-xl text-left md:text-center">
           <p className="font-semibold text-foreground text-xl md:text-2xl">
             {t("home.greeting")}
           </p>
