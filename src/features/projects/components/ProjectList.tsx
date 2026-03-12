@@ -15,7 +15,7 @@ export function ProjectList({ projects }: { projects: ProjectMeta[] }) {
 
   return (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-      {projects.map((project) => (
+      {projects.sort((a, b) => b.year - a.year).map((project) => (
         <Card key={project.slug} className="flex flex-col h-full hover:border-primary/50 transition-colors duration-200">
           <Link to={`/projects/${project.slug}`} className="flex-1">
             <CardHeader>
