@@ -5,8 +5,8 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 const SUPPORTED_LOCALES: Locale[] = ["en", "fr"];
-const STORAGE_KEY = "geolivier-locale";
-const DEFAULT_LOCALE: Locale = "en";
+export const STORAGE_KEY = "geolivier-locale";
+export const DEFAULT_LOCALE: Locale = "en";
 
 // Resolve locale before React mounts so loaders get the correct language
 function resolveInitialLocale(): Locale {

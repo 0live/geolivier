@@ -1,13 +1,15 @@
 import "@/app/config/i18n";
+import { DEFAULT_LOCALE, STORAGE_KEY } from "@/app/config/i18n";
 import { I18nProvider } from "./I18nProvider";
 import { QueryProvider } from "./QueryProvider";
-import { ThemeProvider } from "./ThemeProvider";
+import { STORAGE_KEY as THEME_STORAGE_KEY, ThemeProvider } from "./ThemeProvider";
+
 
 export function AppProviders({ children }: { children: React.ReactNode }) {
   return (
     <QueryProvider>
-      <I18nProvider defaultLocale="en" storageKey="geolivier-locale">
-        <ThemeProvider defaultTheme="dark" storageKey="geolivier-theme">
+      <I18nProvider defaultLocale={DEFAULT_LOCALE} storageKey={STORAGE_KEY}>
+        <ThemeProvider defaultTheme="dark" storageKey={THEME_STORAGE_KEY}>
           {children}
         </ThemeProvider>
       </I18nProvider>

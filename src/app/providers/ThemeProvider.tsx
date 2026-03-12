@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "dark" | "light" | "system";
+export const STORAGE_KEY = "geolivier-theme";
 
 type ThemeProviderProps = {
   children: React.ReactNode;
@@ -23,7 +24,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 export function ThemeProvider({
   children,
   defaultTheme = "system",
-  storageKey = "vite-ui-theme",
+  storageKey = STORAGE_KEY,
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(

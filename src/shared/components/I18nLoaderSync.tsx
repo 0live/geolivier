@@ -19,6 +19,7 @@ export function I18nLoaderSync() {
         pathname.startsWith(route)
       );
       if (shouldRevalidate) {
+        console.log("Revalidating...");
         revalidator.revalidate();
       }
     };

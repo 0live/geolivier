@@ -1,3 +1,4 @@
+import { DEFAULT_LOCALE, STORAGE_KEY } from "@/app/config/i18n";
 import type { Locale } from "@/shared/types/Locale";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -22,8 +23,8 @@ const I18nProviderContext = createContext<I18nProviderState>(initialState);
 
 export function I18nProvider({
   children,
-  defaultLocale = "en",
-  storageKey = "geolivier-locale",
+  defaultLocale = DEFAULT_LOCALE,
+  storageKey = STORAGE_KEY,
   ...props
 }: I18nProviderProps) {
   const { i18n } = useTranslation();
