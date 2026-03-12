@@ -1,0 +1,33 @@
+---
+title: "Health Context Application"
+description: "A flexible and customizable application for monitoring health indicators"
+tags: ["Vue.JS", "Maplibre", "KoboToolbox", "ESRI", "AWS", "CI/CD"]
+year: 2022
+---
+
+## Health Context Monitoring
+
+The Health Context Application (HCA), developed for Médecins Sans Frontières (Doctors Without Borders), aims to provide a unique tool for temporal and spatial monitoring of health indicators. It is designed to be replicable and configurable according to location and the type of indicators to be visualized (patient distribution, disease evolution, etc.).
+
+Conceived as a meta-application, the HCA is modular and extensible. The objective was to have a solution deployable in any MSF intervention area, configurable via a simple JSON file. This configuration describes the data to be injected, the types of indicators to be visualized (cartographic semiology, charts, scorecards, etc.), the administrative boundaries to be used, and the interactions between the different UI elements.
+
+This system allows for a single codebase for very diverse contexts, while enabling all instances to benefit from developments in the core application (notably new visualization modules).
+
+import hcaImage from "./img/hca.webp";
+
+<img
+  src={hcaImage}
+  alt="HCA Demo"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Technical Implementation
+
+**Stack**: Vue.js, MapLibre GL, D3.js for the interface; ArcGIS Server, KoboToolbox, and DHIS2 for data; AWS for hosting.
+
+**CI/CD**: For the deployment of a new application, the Core repository is duplicated into an S3 bucket. With each modification to the Core repository, a new version of the application is pushed to each "satellite" bucket.
+
+**Vector Tiles**: MSF has a cartographic database of various administrative or health boundaries at a global scale. To avoid creating massive datasets for each application, the vector tile streams representing these boundaries are joined on the client side with data from Kobo or DHIS2. This allows for visualizing many different representations (proportional circles, ratios, etc.) across thousands of polygons fluently, without any additional geographic data creation.

@@ -1,0 +1,33 @@
+---
+title: "Health Context Application"
+description: "Une application flexible et personnalisable pour afficher des indicateurs de santé"
+tags: ["Vue.JS", "Maplibre", "KoboToolbox", "ESRI", "AWS", "CI/CD"]
+year: 2022
+---
+
+## Suivi du contexte sanitaire
+
+La Health Context Application (HCA), développée pour Médecins Sans Frontières, a pour but de fournir un outil unique de suivi temporel et spatial des indicateurs sanitaires. Elle est conçue pour être duplicable et paramétrable selon la localisation et le type d'indicateurs à visualiser (répartition des patients, évolution des maladies, etc.).
+
+Pensée comme une méta-application, la HCA est modulaire et extensible. L'objectif était de disposer d'une solution déployable sur n'importe quel terrain d'intervention de MSF, configurable via un simple fichier JSON. Cette configuration permet de décrire les données à injecter, les types d'indicateurs à visualiser (sémiologie cartographique, graphiques, scorecards, etc.), les zonages administratifs à utiliser et les interactions entre les différents éléments de l'UI.
+
+Ce système permet de maintenir une codebase unique pour des contextes très variés, tout en permettant à l'ensemble des instances de bénéficier des évolutions du cœur de l'application (notamment les nouveaux modules de visualisation).
+
+import hcaImage from "./img/hca.webp";
+
+<img
+  src={hcaImage}
+  alt="HCA Demo"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Implémentation technique
+
+**Stack** : Vue.js, MapLibre GL, D3.js pour l'interface ; ArcGIS Server, KoboToolbox et DHIS2 pour les données ; AWS pour l'hébergement.
+
+**CI/CD** : Pour le déploiement d'une nouvelle application, le repository Core est dupliqué dans un bucket S3. À chaque modification du repository Core, une nouvelle version de l'application est poussée sur chaque bucket "satellite".
+
+**Tuiles vectorielles** : MSF dispose d'une base de données cartographiques des différents zonages administratifs ou de santé à l'échelle mondiale. Pour éviter de créer des jeux de données massifs pour chaque application, les tuiles vectorielles représentant les zonages sont jointes côté client avec les données issues des bases Kobo ou DHIS2. Ceci permet de visualiser de nombreuses représentations différentes (cercles proportionnels, ratios, etc.) sur des milliers de polygones de manière fluide, sans génération de données géographiques supplémentaires.
