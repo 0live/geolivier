@@ -3,6 +3,7 @@ title: "Signal - Atlas Logistique"
 description: "Application de visualisation de la vulnérabilité logistique et de la résilience des communautés"
 tags: ["Vue.js", "MapLibre", "D3.js", "PostGIS", "GeoServer"]
 year: 2022
+repoUrl: "https://gitlab.com/atlas-logistique/signal-webmap"
 ---
 
 ## Analyse de la résilience logistique
@@ -15,6 +16,27 @@ L'application s'articule autour de deux composantes majeures :
 
 - **L'Indice de Vulnérabilité Logistique (IVL)** : Un score calculé à partir de 7 sous-indicateurs (accès routier, proximité des points d'entrée, mobilité, etc.) permettant de classifier les zones selon leur fragilité.
 - **Les Diagnostics de l'Environnement Logistique Local** : Des analyses approfondies sur les capacités des chaînes d'approvisionnement et des réseaux de transport locaux.
+
+import img1 from "./img/signal1.webp";
+import img2 from "./img/signal2.webp";
+
+<img
+  src={img1}
+  alt="Signal 1"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+<img
+  src={img2}
+  alt="Signal 2"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
 
 ## Implémentation technique
 
