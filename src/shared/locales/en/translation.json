@@ -26,5 +26,17 @@
   "demo.showToast": "Click me",
   "demo.toast.title": "I am a React component",
   "demo.toast.description": "I am rendered in an MDX file",
-  "demo.toast.undo": "Undo"
+  "demo.toast.undo": "Undo",
+  "about.experience.0.title": "Senior Geospatial Developer",
+  "about.experience.0.company": "CartONG",
+  "about.experience.0.period": "2018 - 2026",
+  "about.experience.0.description": "Led the development of enterprise-scale web applications, mentored junior developers, and implemented best practices for code quality and performance optimization.",
+  "about.experience.1.title": "Geospatial Developer",
+  "about.experience.1.company": "SOGEFI",
+  "about.experience.1.period": "2013 - 2018",
+  "about.experience.1.description": "Developed and maintained multiple client projects, implemented responsive designs, and integrated third-party APIs for enhanced functionality.",
+  "about.experience.2.title": "GIS Intern",
+  "about.experience.2.company": "AMAP",
+  "about.experience.2.period": "2013",
+  "about.experience.2.description": "Created responsive and interactive user interfaces, collaborated with designers, and optimized application performance."
 }

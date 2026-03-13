@@ -1,0 +1,36 @@
+---
+title: "Livelihoods Monitoring System"
+description: "Monitoring the effectiveness of UNHCR assistance programs"
+tags: ["Symfony", "PostgreSQL", "KoboToolbox", "Vue.js"]
+year: 2023
+liveUrl: "https://data.lis.unhcr.org/"
+---
+
+## Monitoring Assistance Program Effectiveness
+
+Developed for the UN Refugee Agency (UNHCR), the Livelihoods Monitoring application aims to help donors and field teams track the effectiveness of assistance programs implemented in recent years.
+
+The primary challenge for this organization is the ability to monitor and compare programs evaluated through complex KoBo forms, which are not usable by standard visualization tools like PowerBI.
+This platform performs the cleaning and aggregation of this heterogeneous data into a centralized database, which allows for:
+
+- **Anonymizing** sensitive data.
+- **Tracking** ongoing program evaluations at a country level across all participating countries.
+- **Creating** automated reports for donors and field teams.
+- **Visualizing** survey results through global indicators across all countries and active programs.
+
+import livelihoodsImage from "./img/livelihoods.webp";
+
+<img
+  src={livelihoodsImage}
+  alt="UNHCR Livelihoods Platform"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Technical Implementation
+
+- **Tech Stack**: Web interface developed with Vue.js, Backend with Symfony and PostgreSQL. PHP scripts for KoBo data imports.
+- **User Profiles**: A single codebase for various user profiles (Coordinator, Analyst, Donor, etc.) with permissions and views tailored to each role.
+- **Synchronization**: Data synchronization with KoboToolbox via the KoboToolbox REST API.

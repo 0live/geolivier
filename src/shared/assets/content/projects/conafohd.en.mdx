@@ -1,0 +1,36 @@
+---
+title: "Kongo Local Data"
+description: "Platform for centralizing and promoting data from local NGOs in the DRC"
+tags: ["Supabase", "PostgreSQL", "Maplibre", "Vue.js"]
+year: 2025
+liveUrl: "https://koldata.conafohd.org/"
+repoUrl: "https://github.com/conafohd/koldata"
+---
+
+## Digital Sovereignty and Localization of Aid
+
+Developed for the National Council of Humanitarian and Development NGO Fora (CONAFOHD), KOLData is a platform designed to centralize and track NGO activities in the Democratic Republic of the Congo.
+
+The core challenge is to address the lack of visibility regarding actions led by national NGOs. Too often, humanitarian data is collected by international actors without benefiting local structures.
+This platform enables the centralization and promotion of data produced by over 500 Congolese organizations in order to:
+
+- **Strengthen advocacy** and the recognition of local initiatives among donors.
+- **Improve coordination** and planning of humanitarian and development interventions across the entire territory.
+- **Provide a secure tool** for data editing by member organizations within the five regional fora.
+
+import koldataImage from "./img/koldata.webp";
+
+<img
+  src={koldataImage}
+  alt="CONAFOHD KOLData Platform"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Technical Implementation
+
+- **Tech Stack**: User interface developed with Vue.js and Maplibre for the mapping component. Supabase for the database and authentication.
+- **RLS Policies**: Implementation of Row Level Security (RLS) policies to secure data and ensure that each organization can only access its own data.
+- **Rapid Deployment**: As a pilot project with a limited budget, choosing a modern stack allowed for the deployment of a full platform in just a few days.

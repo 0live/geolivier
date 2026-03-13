@@ -1,0 +1,36 @@
+---
+title: "Kongo Local Data"
+description: "Plateforme de centralisation et de valorisation des données des ONG locales en RDC"
+tags: ["Supabase", "PostgreSQL", "Maplibre", "Vue.js"]
+year: 2025
+liveUrl: "https://koldata.conafohd.org/"
+repoUrl: "https://github.com/conafohd/koldata"
+---
+
+## Souveraineté numérique et localisation de l'aide
+
+Développée pour le Conseil National des Fora des ONG Humanitaires et de Développement (CONAFOHD), KOLData est une plateforme visant à centraliser et suivre les actions des ONG en République Démocratique du Congo.
+
+La problématique centrale est de remédier au manque de visibilité des actions menées par les ONG nationales. Trop souvent, les données humanitaires sont collectées par des acteurs internationaux sans bénéficier aux structures locales.
+Cette plateforme permet de centraliser et de valoriser les données produites par plus de 500 organisations congolaises afin de :
+
+- **Renforcer le plaidoyer** et la reconnaissance des initiatives locales auprès des bailleurs de fonds.
+- **Améliorer la coordination** et la planification des interventions humanitaires et de développement sur l'ensemble du territoire.
+- **Offrir un outil sécurisé** pour l'édition des données par les organisations membres des cinq fora régionaux.
+
+import koldataImage from "./img/koldata.webp";
+
+<img
+  src={koldataImage}
+  alt="Plateforme KOLData du CONAFOHD"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Implémentation technique
+
+- **Stack technique** : Interface utilisateur dévelopée avec Vue.js et Maplibre pour la partie cartographique. Supabase pour la base de données et l'authentification.
+- **RLS Policies** : Mise en place de policies RLS pour sécuriser les données et garantir que chaque organisation ne puisse accéder qu'à ses propres données.
+- **Déploiement rapide** : Projet pilote avec un budget limité, le choix d'une stack moderne a permis de déployer une plateforme complète en quelques jours.

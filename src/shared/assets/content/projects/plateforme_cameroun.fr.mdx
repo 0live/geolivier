@@ -1,0 +1,33 @@
+---
+title: "Plateforme Urbaine au Cameroun"
+description: "Renforcement de la gouvernance urbaine et centralisation des données territoriales"
+tags: ["QGIS", "QGIS Server", "Vue.js", "Symfony", "PostGIS", "Maplibre"]
+year: 2024
+liveUrl: "https://plateforme-urbaine.cm/"
+repoUrl: "https://github.com/CartONG/plateforme-urbaine-cameroun"
+---
+
+## Mutualisation des données urbaines au Cameroun
+
+Le projet Plateforme urbaine au Cameroun vise à créer une plateforme de référence pour les acteurs de l'aménagement urbain au Cameroun.
+La problématique majeure identifiée est la fragmentation des données et le manque de concertation entre les nombreux acteurs de l'urbain (ministères, mairies, société civile). De nombreux documents de planification ont été produits ces deux dernières décennies, mais ils restent souvent méconnus ou inaccessibles, freinant ainsi une gestion efficace du territoire.
+Le projet répond à ces enjeux à travers deux axes majeurs :
+
+- **Centralisation des connaissances** : Création d'une base de données en libre accès regroupant les Plans Directeurs d'Urbanisme et les schémas régionaux pour faciliter leur appropriation.
+- **Plateforme collaborative** : Développement d'une interface de visualisation et de partage de données (annuaire des structures, cartographie des projets en cours, bibliothèque de données cartographiques de références) pour favoriser le partage et la concertation.
+
+import plmImage from "./img/plm.webp";
+
+<img
+  src={plmImage}
+  alt="Plateforme Urbaine au Cameroun"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Implémentation technique
+
+- **Stack technique** : Interface utilisateur développée avec Vue.js et Maplibre pour la partie cartographique, Symfony/API Platform pour l'accès aux données et l'authentification, PostGIS pour le stockage des données géospatiales.
+- **Ecosystème QGIS** : Une des demandes des utilisateurs était de pouvoir importer dans la plateforme de cartes produites avec QGIS. Nous avons mis en place un système basé sur QGIS Server et PostGIS pour permettre de créer des cartes en local sur QGIS à partir de la base de données de l'application et de verser ensuite ces projets dans la plateforme qui les rend consultables en ligne.

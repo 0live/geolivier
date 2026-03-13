@@ -1,0 +1,33 @@
+---
+title: "Cameroon Urban Platform"
+description: "Strengthening urban governance and centralizing territorial data"
+tags: ["QGIS", "QGIS Server", "Vue.js", "Symfony", "PostGIS", "Maplibre"]
+year: 2024
+liveUrl: "https://plateforme-urbaine.cm/"
+repoUrl: "https://github.com/CartONG/plateforme-urbaine-cameroun"
+---
+
+## Pooling Urban Data in Cameroon
+
+The Cameroon Urban Platform project aims to create a benchmark platform for urban planning stakeholders in Cameroon.
+The major challenge identified is data fragmentation and the lack of coordination between numerous urban actors (ministries, municipalities, civil society). Many planning documents have been produced over the last two decades, but they often remain unknown or inaccessible, hindering effective territorial management.
+The project addresses these issues through two major axes:
+
+- **Centralizing Knowledge**: Creating an open-access database gathering Urban Master Plans and regional schemes to facilitate their appropriation.
+- **Collaborative Platform**: Developing an interface for data visualization and sharing (directory of organizations, mapping of ongoing projects, library of reference cartographic data) to promote sharing and consultation.
+
+import plmImage from "./img/plm.webp";
+
+<img
+  src={plmImage}
+  alt="Cameroon Urban Platform"
+  className="w-full h-auto rounded-xl shadow-lg border border-border bg-muted my-8 transition-transform duration-300 hover:scale-[1.02]"
+  loading="lazy"
+  width="1920"
+  height="1080"
+/>
+
+## Technical Implementation
+
+- **Tech Stack**: User interface developed with Vue.js and Maplibre for the mapping component, Symfony/API Platform for data access and authentication, and PostGIS for geospatial data storage.
+- **QGIS Ecosystem**: One of the user requirements was the ability to import maps produced with QGIS into the platform. We implemented a system based on QGIS Server and PostGIS, allowing users to create maps locally in QGIS using the application's database and then upload these projects to the platform for online viewing.

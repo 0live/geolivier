@@ -26,5 +26,17 @@
   "demo.showToast": "Clique ici pour voir un toast",
   "demo.toast.title": "Je suis un composant React",
   "demo.toast.description": "Je suis rendu dans un fichier MDX",
-  "demo.toast.undo": "Annuler"
+  "demo.toast.undo": "Annuler",
+  "about.experience.0.title": "Développeur Géospatial Senior",
+  "about.experience.0.company": "CartONG",
+  "about.experience.0.period": "2018 - 2026",
+  "about.experience.0.description": "Direction du développement d'applications web à grande échelle, mentorat de développeurs juniors et mise en œuvre des meilleures pratiques pour la qualité du code et l'optimisation des performances.",
+  "about.experience.1.title": "Développeur Géospatial",
+  "about.experience.1.company": "SOGEFI",
+  "about.experience.1.period": "2013 - 2018",
+  "about.experience.1.description": "Développement et maintenance de multiples projets clients, mise en œuvre de designs responsives et intégration d'API tierces pour des fonctionnalités enrichies.",
+  "about.experience.2.title": "Stagiaire SIG",
+  "about.experience.2.company": "AMAP",
+  "about.experience.2.period": "2013",
+  "about.experience.2.description": "Création d'interfaces utilisateur réactives et interactives, collaboration avec des designers et optimisation des performances des applications."
 }

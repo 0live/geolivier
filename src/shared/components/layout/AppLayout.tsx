@@ -9,7 +9,7 @@ export function AppLayout() {
       <I18nLoaderSync />
       <div className="fixed inset-0 -z-10 bg-app-image bg-cover bg-center bg-no-repeat opacity-20 transition-colors duration-300" />
       <Header />
-      <main className="flex flex-1 flex-col items-center p-6">
+      <main className="flex flex-1 flex-col items-center py-12 px-6 lg:px-[15%]">
         <Outlet />
       </main>
       <Footer />
