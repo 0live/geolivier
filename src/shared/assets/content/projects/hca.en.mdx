@@ -1,7 +1,7 @@
 ---
 title: "Health Context Application"
 description: "A flexible and customizable application for monitoring health indicators"
-tags: ["Vue.js", "Maplibre", "KoboToolbox", "ESRI", "AWS", "CI/CD"]
+tags: ["Vue.js", "Maplibre", "KoboToolbox", "ESRI", "AWS", "Azure DevOps"]
 year: 2023
 ---
 
@@ -28,6 +28,6 @@ import hcaImage from "./img/hca.webp";
 
 **Stack**: Vue.js, MapLibre GL, D3.js for the interface; ArcGIS Server, KoboToolbox, and DHIS2 for data; AWS for hosting.
 
-**CI/CD**: For the deployment of a new application, the Core repository is duplicated into an S3 bucket. With each modification to the Core repository, a new version of the application is pushed to each "satellite" bucket.
+**CI/CD**: For the deployment of a new application, the Core repository is duplicated into an S3 bucket. With each modification to the Core repository, a new version of the application is pushed to each "satellite" bucket by Azure DevOps pipelines.
 
 **Vector Tiles**: MSF has a cartographic database of various administrative or health boundaries at a global scale. To avoid creating massive datasets for each application, the vector tile streams representing these boundaries are joined on the client side with data from Kobo or DHIS2. This allows for visualizing many different representations (proportional circles, ratios, etc.) across thousands of polygons fluently, without any additional geographic data creation.
