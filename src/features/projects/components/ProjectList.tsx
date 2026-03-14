@@ -25,7 +25,7 @@ export function ProjectList({ projects }: { projects: ProjectMeta[] }) {
                 </span>
                 <div className="flex gap-2 flex-wrap justify-end">
                   {project.tags.map((tag: string) => (
-                    <span key={tag} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-md">
+                    <span key={tag} className="text-[10px] tracking-widest font-bold border border-accent/50 text-accent-foreground px-2 py-0.5 rounded-sm shadow-sm">
                       {tag}
                     </span>
                   ))}
