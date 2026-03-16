@@ -27,7 +27,7 @@
   "demo.toast.title": "Je suis un composant React",
   "demo.toast.description": "Je suis rendu dans un fichier MDX",
   "demo.toast.undo": "Annuler",
-  "demo.map.loading": "Chargement des lieux…",
+  "demo.map.loading": "Chargement des données Overture Maps…",
   "demo.map.panel.title": "Propriétés",
   "demo.map.panel.close": "Fermer le panneau",
   "demo.map.zoomHint": "Zoomez au niveau 14 pour pouvoir interroger les objets",

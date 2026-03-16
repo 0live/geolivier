@@ -1,12 +1,6 @@
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
-
-type FeatureProperties = Record<string, string | number | boolean | null>;
-
-export type MapFeature = {
-  properties: FeatureProperties;
-  layerLabel: string;
-};
+import type { MapFeature } from "../types";
 
 interface PlacePropertiesPanelProps {
   features: MapFeature[];

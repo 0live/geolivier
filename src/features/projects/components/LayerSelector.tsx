@@ -1,6 +1,10 @@
 import { useTranslation } from "react-i18next";
-
-export type LayerId = "poi" | "buildings";
+import {
+  MAP_BADGE_BG,
+  MAP_PRIMARY_COLOR,
+  MAP_SECONDARY_COLOR,
+} from "../constants/map.constants";
+import type { LayerId } from "../types";
 
 interface LayerSelectorProps {
   visibleLayers: Set<LayerId>;
@@ -18,18 +22,20 @@ export function LayerSelector({ visibleLayers, onToggle }: LayerSelectorProps) {
   return (
     <div
       className="absolute bottom-6 left-2 flex flex-col gap-1 p-2 rounded"
-      style={{ background: "rgba(0,0,0,0.45)", zIndex: 10 }}
+      style={{ background: MAP_BADGE_BG, zIndex: 10 }}
     >
       <span className="text-xs font-semibold text-white/70 mb-0.5">
         {t("demo.map.layers.title")}
       </span>
       {LAYERS.map(({ id, labelKey }) => {
         const active = visibleLayers.has(id);
+        const color = id === "poi" ? MAP_PRIMARY_COLOR : MAP_SECONDARY_COLOR;
+
         return (
           <button
             key={id}
             onClick={() => onToggle(id)}
-            className="flex items-center gap-2 text-xs font-medium text-white transition-opacity"
+            className="cursor-pointer flex items-center gap-2 text-xs font-medium text-white transition-opacity"
             style={{ opacity: active ? 1 : 0.4 }}
           >
             {/* Color swatch */}
@@ -38,7 +44,7 @@ export function LayerSelector({ visibleLayers, onToggle }: LayerSelectorProps) {
               style={{
                 width: 10,
                 height: 10,
-                background: id === "poi" ? "#80001e" : "#218f9c",
+                background: color,
                 opacity: active ? 1 : 0.4,
               }}
             />
