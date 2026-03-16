@@ -1,26 +1,44 @@
-import { X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-type PlaceProperties = Record<string, string | number | boolean | null>;
+type FeatureProperties = Record<string, string | number | boolean | null>;
+
+export type MapFeature = {
+  properties: FeatureProperties;
+  layerLabel: string;
+};
 
 interface PlacePropertiesPanelProps {
-  properties: PlaceProperties | null;
+  features: MapFeature[];
+  currentIndex: number;
+  onPrev: () => void;
+  onNext: () => void;
   onClose: () => void;
 }
 
-export function PlacePropertiesPanel({ properties, onClose }: PlacePropertiesPanelProps) {
+export function PlacePropertiesPanel({
+  features,
+  currentIndex,
+  onPrev,
+  onNext,
+  onClose,
+}: PlacePropertiesPanelProps) {
   const { t } = useTranslation();
 
+  const isOpen = features.length > 0;
+  const current = features[currentIndex] ?? null;
+  const properties = current?.properties ?? null;
+  const layerLabel = current?.layerLabel ?? "";
   const entries = properties ? Object.entries(properties).filter(([, v]) => v !== null) : [];
+  const hasMany = features.length > 1;
 
   return (
     <div
       className="absolute top-0 right-0 h-full w-72 bg-white/90 shadow-xl flex flex-col"
       style={{
         backdropFilter: "blur(6px)",
-        transform: properties ? "translateX(0)" : "translateX(100%)",
+        transform: isOpen ? "translateX(0)" : "translateX(100%)",
         transition: "transform 0.3s ease",
-        // Ensure the panel sits above map controls
         zIndex: 10,
       }}
     >
@@ -37,6 +55,40 @@ export function PlacePropertiesPanel({ properties, onClose }: PlacePropertiesPan
           <X size={16} />
         </button>
       </div>
+
+      {/* Multi-feature navigator */}
+      {hasMany && (
+        <div className="flex items-center justify-between px-3 py-1.5 border-b border-gray-100 bg-gray-50">
+          <button
+            onClick={onPrev}
+            aria-label={t("demo.map.panel.prev")}
+            className="rounded p-1 text-gray-500 hover:bg-gray-200 disabled:opacity-30 transition-colors"
+            disabled={currentIndex === 0}
+          >
+            <ChevronLeft size={14} />
+          </button>
+          <span className="text-xs text-gray-500 font-medium tabular-nums">
+            {currentIndex + 1} / {features.length}
+          </span>
+          <button
+            onClick={onNext}
+            aria-label={t("demo.map.panel.next")}
+            className="rounded p-1 text-gray-500 hover:bg-gray-200 disabled:opacity-30 transition-colors"
+            disabled={currentIndex === features.length - 1}
+          >
+            <ChevronRight size={14} />
+          </button>
+        </div>
+      )}
+
+      {/* Layer label */}
+      {layerLabel && (
+        <div className="flex justify-center px-4 pt-2 pb-1">
+          <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-gray-100 text-gray-500">
+            {layerLabel}
+          </span>
+        </div>
+      )}
 
       {/* Properties table */}
       <div className="flex-1 overflow-y-auto">
