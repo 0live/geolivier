@@ -16,12 +16,8 @@ But above all, this site is intended to be the showcase for a much larger projec
 
 Currently using GitHub Pages for hosting and not wanting to deploy a backend architecture or use a meta-framework at this stage, I rely on MDX files. This allows me to manipulate my data with the same flexibility as with Next.js (Markdown + React components).
 
-import { SonnerDemo } from "@/shared/components/ui/sonner-demo";
-import { Toaster } from "@/shared/components/ui/sonner";
+import { DemoMdxMap } from "@/features/projects/components/DemoMdxMap";
 
-<div className="flex justify-center">
-  <SonnerDemo />
-</div>
-<Toaster position="top-right" />
+<DemoMdxMap />
 
 The core of the system relies on Vite's capabilities to automatically index my folders and transform each MDX file into an independent React module. This system makes it possible to dynamically generate the list of my projects based solely on the file metadata, while isolating each content in a separate 'chunk', loaded only upon consultation to ensure smooth navigation, while remaining a simple React application. This will be the occasion for a first blog post!
