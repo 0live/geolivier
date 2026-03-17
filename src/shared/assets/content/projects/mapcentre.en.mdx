@@ -1,20 +1,21 @@
 ---
 title: "MapCentre for MSF"
 description: "A single entry point for mapping at Médecins Sans Frontières."
-tags: ["ESRI", "Symfony", "Vue.js", "FME", "Leaflet", "Mapbox", "DevOps"]
+tags:
+  ["ESRI", "Symfony", "Vue.js", "FME", "Leaflet", "Mapbox", "DevOps", "Python"]
 year: 2018
 liveUrl: "https://mapcentre.msf.org/home"
 ---
 
 ## A single point of access for geographic data
 
-Developed for the GIS Centre of Médecins Sans Frontières (MSF), the MapCentre serves as a one-stop shop for accessing all of the organization's geographic resources. The main objective is to support teams, both at headquarters and in the field, in their operational decision-making through tools adapted to humanitarian challenges. Another key goal was to provide a platform accessible enough to raise awareness among non-technical users about the added value of mapping in their daily operations.
+Developed for the GIS Centre of Médecins Sans Frontières (MSF), the <a href="https://geo.msf.org/home" target="_blank">geoplatform</a> serves as a one-stop shop for accessing all of the organization's geographic resources. The main objective is to support teams, both at headquarters and in the field, in their operational decision-making through tools adapted to humanitarian challenges. Another key goal was to provide a platform accessible enough to raise awareness among non-technical users about the added value of mapping in their daily operations.
 
 The major challenge was to centralize and structure a vast amount of data produced daily for various international missions, while ensuring optimal accessibility for different types of users (logisticians, program managers, cartographers, etc.) and in contexts where connectivity can be limited.
 
 ## Key features
 
-The platform is structured around three main pillars:
+The <a href="https://www.youtube.com/watch?v=7X4ro7VO_y8" target="_blank">platform</a> is structured around three main pillars:
 
 - **Map Catalogue**: An online library gathering over 3,000 static maps (reference, logistics, security, or epidemiological analysis) ready for viewing or downloading.
 - **GeoApps Portal**: Centralized access to web mapping applications with advanced business features (epidemiology, security, logistics, etc.).
@@ -31,9 +32,11 @@ import msfImage from "./img/msfmapcentre.webp";
   height="1080"
 />
 
-## Technical implementation
+## Technical Implementation
 
-- **Software architecture**: Implementation of a technical infrastructure combining proprietary mapping tools (ArcGIS Server/Portal, requiring Windows servers) for the database and web mapping services.
-- **Data management**: Deployment of cleaning pipelines (using FME Server), homogenization, and structuring of spatial data to ensure the reliability of information distributed to coordination teams.
-- **Web development**: Use of the Symfony framework for hosting content pages and independent web applications. The user interface was developed with Vue.js.
-- **Mapping applications**: Development of simple applications via the Esri suite (Experience Builder/StoryMaps) and more complex applications with Open Source technologies (Vue/Leaflet/Mapbox) leveraging the web services of the ArcGIS Server REST API for data.
+- **Architecture & Administration**: Deployment of a complex hybrid infrastructure (Linux/Windows) managing the cohabitation between **Symfony** web services and the proprietary **ArcGIS Enterprise** ecosystem (Server/Portal).
+- **Data Governance**: Implementation of a centralized spatial database shared by **cartographers** (desktop editing) and **developers** (API consumption), ensuring a single source of truth.
+- **ETL Pipelines & Quality Control**: Automation of field data cleaning and homogenization via **FME Server** to ensure the reliability of distributed humanitarian indicators.
+- **Application Ecosystem**: Use of Symfony as a secure "parent" application, orchestrating authentication and the hosting of multiple **Micro-Frontends (SPAs)** developed by different teams.
+- **Security & Cataloging**: Implementation of Role-Based Access Control (**RBAC**) to protect sensitive data and a high-performance indexing engine for the map and resource inventory.
+- **Hybrid Development**: Technical balance between "No-code" solutions (Esri Experience Builder) for rapid deployment and custom development (Maplibre, Mapbox, Leaflet) for complex business tools.
