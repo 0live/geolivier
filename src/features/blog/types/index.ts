@@ -3,7 +3,5 @@ export interface BlogMeta {
   title: string;
   date: string;
   description: string;
-  audience: BlogAudience[];
+  audience: string[];
 }
-
-export type BlogAudience = "developer" | "geographer" | "project-manager" | "recruiter";

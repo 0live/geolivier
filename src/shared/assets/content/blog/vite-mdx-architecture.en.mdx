@@ -1,47 +1,80 @@
 ---
-title: "Managing Content with Vite and MDX: Simplicity for Performance"
+title: "Launching geolivier.xyz"
 date: "2026-03-17"
-description: "How I built a high-performance blog and project system using MDX, Vite, and lazy-loading, without a database or a complex CMS."
-tags: ["vite", "mdx", "react", "architecture"]
+description: "The beginning of a new cycle full of possibilities"
+audience: ["Developer"]
 ---
 
-# Managing Content with Vite and MDX: Simplicity for Performance
+# New chapter, new project
 
-When you start building a portfolio or a blog, you often find yourself facing a dilemma: use a heavy CMS (like WordPress or Contentful) or code every page by hand. On this site, I opted for a third way, both simple and powerful: a system based on **Vite** and **MDX**.
+After working for more than 7 years for an NGO, I was affected by the <a href="[https://www.coordinationsud.org/actualite/etude-impacts-coupes/](https://www.coordinationsud.org/actualite/etude-impacts-coupes/)" target="_blank">funding cuts in the international aid sector</a>. As a developer, I mainly worked on <a href="/projects">projects</a> related to program monitoring and analysis in collaboration with headquarters.
 
-The idea is simple: each project or article is a `.mdx` file stored directly in the code. No database, no external API, just files. But wait, without exploding the initial weight of the application.
+During periods of budget reduction, these projects were the first to be paused or discontinued — an understandable choice, of course — which led to the closure of the web development hub I was part of in December 2025.
 
-## The Secret: `import.meta.glob`
+After a few weeks' break, I’m going to take advantage of this free time to focus on a project I’ve had in mind for a while: <a href="[https://github.com/0live/Canopy](https://github.com/0live/Canopy)" target="_blank">Canopy</a>. But before that, I wanted to quickly implement a personal site to serve as an interactive business card, and also to have a space to write freely about everything related to the rather specialized field of geomatics.
 
-The heart of the system relies on a great Vite feature: `import.meta.glob`. It allows scanning a folder and retrieving a list of dynamic import functions.
+We’re starting today with a purely web-related topic. Nothing cartographic or revolutionary here—just a presentation of a simple technical feature to mark the site's launch.
+
+---
+
+# Managing content in Markdown and serving it with Vite
+
+When you start building a portfolio or a blog and don't want to deal with server infrastructure, you often face a dilemma:
+
+- Use a **CMS via SaaS**.
+- Use a framework like **Next/Nuxt** which offers dozens of content editing tools.
+- Turn to recent <a href="[https://www.teotimepacreau.fr/blog/git-based-headless-cms/](https://www.teotimepacreau.fr/blog/git-based-headless-cms/)">**Git-based CMS**</a> solutions.
+
+In my case, although the heart of the site is based on Markdown content, I wanted to keep it simple by limiting external tools since I won't have hundreds of articles to manage. With this in mind, I discovered a simple solution based on **Vite** and the **MDX** format.
+
+<span className="text-sm text-muted-foreground block border-l-2 border-primary/20 pl-4 italic mb-6">
+  MDX (Markdown Executable) is an extension of traditional Markdown that allows
+  you to insert React components (JSX) directly into your text files. Vite, for
+  its part, is the successor to Webpack: it provides an instantaneous
+  development server and a high-performance bundler.
+</span>
+
+The idea is simple: each project or article is an `.mdx` file stored directly in the codebase. No database, no external API. This allows me to write my content using simple syntax while having the ability to display web components when needed. This content is then transformed into JS modules by Vite.
+
+## The secret: `import.meta.glob`
+
+The heart of the system relies on a powerful Vite feature: `import.meta.glob`. It allows you to scan a folder and automatically generate an index of dynamic imports.
 
 ```typescript
 const modules = import.meta.glob("./content/*.mdx");
 ```
 
-What's powerful is that Vite doesn't load the content of all files at once. It just gives us the "keys" to load them later.
+Unlike a classic import that would load all content at startup, `import.meta.glob` is **lazy**. It returns an object like this:
 
-## Metadata and Lazy Loading
+```typescript
+{
+  "./content/project-1.mdx": () => import("./content/project-1.mdx"),
+  "./content/project-2.mdx": () => import("./content/project-2.mdx")
+}
+```
 
-## From Indexing to Rendering
+In concrete terms, Vite crawls my application code and creates two things:
 
-To display the list of articles on the home page, the application first needs to know what's "in stock". This is where the system splits into two steps:
+1.  **An import function list** for modules that indexes all `.mdx` files found in the specified folder.
+2.  **On-demand loading**: each function allows loading a module containing the article's content as a React component along with its metadata.
 
-1.  **Indexing (`fetchAll`)**: We loop through all the import functions listed by Vite (the `import.meta.glob`) to retrieve their metadata. Technically, the browser downloads the compiled JS file for each article. It's very fast because these are just small code fragments, but it means the data is already "there" behind the scenes.
-2.  **Deferred Rendering (Lazy Loading)**: Even if the code is downloaded, it is never executed unnecessarily. Thanks to React's `lazy()`, the article component is only instantiated and displayed if the user actually clicks on it.
+## From indexing to rendering
 
-It's an ideal compromise: we fetch the necessary catalog info all at once, but we only make the processor work for display when it's truly needed.
+To display the list of articles on the homepage, the application first needs to know what’s "in stock." The system is divided into two steps:
 
-## But how do we get the metadata?
+1.  **Indexing**: We loop through all the import functions listed by Vite to retrieve their metadata. Technically, the browser downloads each article's compiled file. It's very fast because these are just small fragments of JS code, but it means the data is already "there" behind the scenes.
+2.  **Deferred Rendering (Lazy Loading)**: Even if the code is downloaded, it is never executed unnecessarily. Thanks to React's `lazy()`, the article component is only instantiated and displayed if the user actually clicks on it (thus avoiding premature loading of images or heavy resources).
 
-One might think that we need to scan the text file to look for the YAML block. In reality, it's much smarter. During the build, two **Remark** plugins (`remark-frontmatter` and `remark-mdx-frontmatter`) intercept the file.
+## But how do we retrieve the metadata?
 
-They transform the YAML block into a simple JavaScript variable named `frontmatter`, which is automatically added to the file's exports. When my code does an `import`, it doesn't receive text, but a ready-to-use JavaScript object. It's fast, typed, and perfectly integrated into the application's lifecycle.
+During the build process, two **Remark** plugins (`remark-frontmatter` and `remark-mdx-frontmatter`) intercept the file.
+
+They transform the YAML block into a simple JavaScript variable named `frontmatter`, which is automatically added to the file's exports. When my code performs an `import`, it doesn't receive raw text, but a ready-to-use JavaScript object. It’s fast, typed, and perfectly integrated into the application's lifecycle.
 
 ## Why this system?
 
-1. **Pragmatism and Performance**: For a portfolio, the download overhead is negligible compared to the gain in simplicity. If the site were to become massive (thousands of articles), we could simply generate a JSON index during build time to load MDX modules only on click. For now, Vite's lightness makes this optimization unnecessary!
-2. **Developer Experience**: Writing an article is just creating a Markdown file. We benefit from the power of React (we can put interactive components, like my MapLibre maps, directly in the text).
-3. **Zero Maintenance**: No need for a database server or managing CMS access. Everything is versioned in Git.
+- **Pragmatism and Performance**: For a portfolio, the download overhead is negligible compared to the gain in simplicity. If the site were to become massive, I could simply generate a JSON index at build time. For now, Vite's efficiency makes this optimization unnecessary.
+- **Developer Experience**: Writing an article is just about creating a Markdown file. I benefit from the power of React (displaying web components if necessary) and I have full control to handle display automatically based on the selected language.
+- **Zero Maintenance**: No need for a database server or managing CMS access. Everything is versioned in Git.
 
-This is nothing revolutionary, it's just the intelligent use of modern tools. Sometimes, the simplest solution is also the most elegant!
+Nothing revolutionary overall, but it allows me to manage my content exactly how I want, without having to learn complex tools or hack around limitations like MDX support or internationalization.

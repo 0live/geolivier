@@ -120,7 +120,17 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+
+  /* Inline code styling for MDX/Prose */
+  .prose :not(pre) > code {
+    @apply bg-muted text-primary px-1.5 py-0.5 rounded-md font-mono text-[0.9em] border border-border/50;
+  }
+
+  .prose :not(pre) > code::before,
+  .prose :not(pre) > code::after {
+    content: "" !important;
   }
 }
 

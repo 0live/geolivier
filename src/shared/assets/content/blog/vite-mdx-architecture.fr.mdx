@@ -2,12 +2,12 @@
 title: "Lancement de geolivier.xyz"
 date: "2026-03-17"
 description: "Le début d’un nouveau cycle riche en possibilités"
-audience: ["developer"]
+audience: ["Developer"]
 ---
 
 # Nouveau chapitre, nouveau projet
 
-Après avoir travaillé plus de 7 ans pour une ONG, j’ai fait les frais des baisses de financement dans le secteur de l’aide internationale. En tant que développeur, j’intervenais surtout sur des <a href="/projects">projets de suivi/analyse des programmes</a> en lien avec les sièges.
+Après avoir travaillé plus de 7 ans pour une ONG, j’ai fait les frais des baisses de <a href="https://www.coordinationsud.org/actualite/etude-impacts-coupes/" target="_blank">financement dans le secteur de l’aide internationale</a>. En tant que développeur, j’intervenais surtout sur des <a href="/projects">projets</a> de suivi/analyse des programmes en lien avec les sièges.
 
 En période de réduction budgétaire, ces projets ont été les premiers à être mis en pause ou supprimés — un choix évidemment compréhensible — ce qui a conduit en décembre 2025 à la fermeture du pôle de développement web auquel j’étais rattaché.
 
@@ -27,7 +27,12 @@ Quand on commence à construire un portfolio ou un blog et qu’on n’a pas env
 
 Dans mon cas, bien que le cœur du site soit basé sur du contenu en Markdown, j’avais envie de rester simple en limitant les outils externes car je ne vais pas avoir des centaines d’articles à gérer. C’est dans cette optique que j’ai découvert une solution simple basée sur **Vite** et le format **MDX**.
 
-> **Le MDX (Markdown Executable)** est une extension du Markdown traditionnel qui permet d'insérer des composants React (JSX) directement dans vos fichiers texte. **Vite**, de son côté, est le remplaçant de Webpack : il fournit un serveur de développement instantané et un bundler performant.
+<span className="text-sm text-muted-foreground block border-l-2 border-primary/20 pl-4 italic mb-6">
+  Le MDX (Markdown Executable) est une extension du Markdown traditionnel qui
+  permet d'insérer des composants React (JSX) directement dans vos fichiers
+  texte. Vite, de son côté, est le remplaçant de Webpack : il fournit un serveur
+  de développement instantané et un bundler performant.
+</span>
 
 L'idée est simple : chaque projet ou article est un fichier `.mdx` stocké directement dans le code. Pas de base de données, pas d'API externe. Cela me permet d’écrire mon contenu avec une syntaxe simple tout en ayant la possibilité d’afficher des composants web si besoin. Ce contenu est ensuite transformé en modules JS par Vite.
 
