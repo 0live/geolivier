@@ -10,14 +10,14 @@ export function useTimeline() {
       company: t("about.experience.0.company"),
       period: t("about.experience.0.period"),
       description: t("about.experience.0.description"),
-      technologies: ["React", "Node.js", "TypeScript", "AWS", "MongoDB"],
+      technologies: ["Vue.js", "Symfony", "Maplibre/Mapbox", "D3.js", "AWS", "PostgreSQL", "ESRI", "DevOps", "Supabase"],
     },
     {
       title: t("about.experience.1.title"),
       company: t("about.experience.1.company"),
       period: t("about.experience.1.period"),
       description: t("about.experience.1.description"),
-      technologies: ["React", "Express.js", "PostgreSQL", "Docker", "Redis"],
+      technologies: ["jQuery", "Leaflet", "PostgreSQL", "Python", "QGIS"],
     },
     {
       title: t("about.experience.2.title"),

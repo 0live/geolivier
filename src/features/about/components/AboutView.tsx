@@ -12,6 +12,7 @@ export function AboutView() {
         <p>{t("about.description2")}</p>
         <p>{t("about.description3")}</p>
         <p>{t("about.description4")}</p>
+        <p>{t("about.description5")}</p>
       </div>
       <Timeline />
     </div>

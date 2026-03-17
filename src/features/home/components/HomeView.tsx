@@ -22,6 +22,9 @@ export function HomeView() {
               }}
             />
           </p>
+          <p className="italic text-primary font-medium">
+            {t("home.hiring_status")}
+          </p>
         </div>
     </div>
   );
