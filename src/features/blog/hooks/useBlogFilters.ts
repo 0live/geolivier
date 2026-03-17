@@ -18,7 +18,7 @@ export function useBlogFilters() {
     const postTimestamp = new Date(post.date).getTime();
     
     const matchesTags =
-      selectedTags.length === 0 || selectedTags.some((tag) => post.tags.includes(tag));
+      selectedTags.length === 0 || selectedTags.some((audience) => post.audience.includes(audience));
 
     const matchesDate =
       !dateRange || (postTimestamp >= dateRange[0] && postTimestamp <= dateRange[1]);
