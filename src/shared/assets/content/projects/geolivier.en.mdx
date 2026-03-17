@@ -16,8 +16,15 @@ But above all, this site is intended to be the showcase for a much larger projec
 
 Currently using GitHub Pages for hosting and not wanting to deploy a backend architecture or use a meta-framework at this stage, I rely on MDX files. This allows me to manipulate my data with the same flexibility as with Next.js (Markdown + React components).
 
+Example with this MapLibre map displaying <a href="https://overturemaps.org/" target="_blank">OvertureMaps</a> data:
+
 import { DemoMdxMap } from "@/features/projects/components/DemoMdxMap";
 
 <DemoMdxMap />
+<span className="text-sm text-gray-500 italic text-center">
+  72 million POIs and several hundred million buildings displayed without a tile
+  server in a Markdown file (data are PMTiles stored on public S3 buckets). The
+  modern web offers interesting possibilities!
+</span>
 
-The core of the system relies on Vite's capabilities to automatically index my folders and transform each MDX file into an independent React module. This system makes it possible to dynamically generate the list of my projects based solely on the file metadata, while isolating each content in a separate 'chunk', loaded only upon consultation to ensure smooth navigation, while remaining a simple React application. This will be the occasion for a first blog post!
+The core of the system relies on Vite's capabilities to automatically index my folders and transform each MDX file into an independent React module. This system makes it possible to dynamically generate the list of my projects based solely on the file metadata, while isolating each content in a separate 'chunk', loaded only upon consultation to ensure smooth navigation, while remaining a simple React application.

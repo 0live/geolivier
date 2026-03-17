@@ -5,13 +5,14 @@ import {
   LAYER_MAP,
   MAP_PRIMARY_COLOR,
   MAP_SECONDARY_COLOR,
+  MAP_TERTIARY_COLOR,
   PLACES_PMTILES_URL,
 } from "../constants/map.constants";
 import type { LayerId } from "../types";
 
 export function useMapLayers(mapRef: React.RefObject<maplibregl.Map | null>) {
   const [visibleLayers, setVisibleLayers] = useState<Set<LayerId>>(
-    new Set(["poi", "buildings"])
+    new Set(["poi", "buildings", "building_part"])
   );
 
   useEffect(() => {
@@ -54,6 +55,7 @@ export function useMapLayers(mapRef: React.RefObject<maplibregl.Map | null>) {
         });
 
         const buildingColor = `${MAP_SECONDARY_COLOR}a1`;
+        const buildingPartColor = `${MAP_TERTIARY_COLOR}a1`;
 
         map.addLayer({
           id: "buildings",
@@ -78,6 +80,33 @@ export function useMapLayers(mapRef: React.RefObject<maplibregl.Map | null>) {
           minzoom: 15,
           paint: {
             "fill-color": buildingColor,
+            "fill-opacity": 0.3,
+          },
+        });
+
+        map.addLayer({
+          id: "building-part",
+          type: "line",
+          source: "overture-buildings",
+          "source-layer": "building_part",
+          minzoom: 10,
+          paint: {
+            "line-color": buildingPartColor,
+            "line-width": [
+              "interpolate", ["linear"], ["zoom"],
+              10, 0.5, 14, 1, 16, 2,
+            ],
+          },
+        });
+
+        map.addLayer({
+          id: "building-part-fill",
+          type: "fill",
+          source: "overture-buildings",
+          "source-layer": "building_part",
+          minzoom: 15,
+          paint: {
+            "fill-color": buildingPartColor,
             "fill-opacity": 0.3,
           },
         });

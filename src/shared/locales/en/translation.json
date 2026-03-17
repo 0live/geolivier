@@ -34,6 +34,7 @@
   "demo.map.layers.title": "Layers",
   "demo.map.layers.poi": "POI",
   "demo.map.layers.buildings": "Buildings",
+  "demo.map.layers.building_part": "Particular buildings",
   "demo.map.panel.prev": "Previous feature",
   "demo.map.panel.next": "Next feature",
   "about.title": "My journey",

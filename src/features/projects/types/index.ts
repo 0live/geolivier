@@ -9,7 +9,7 @@ export interface ProjectMeta {
   publicationUrl?: string;
 }
 
-export type LayerId = "poi" | "buildings";
+export type LayerId = "poi" | "buildings" | "building_part";
 
 export type FeatureProperties = Record<string, string | number | boolean | null>;
 

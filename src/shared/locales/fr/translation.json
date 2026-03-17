@@ -34,6 +34,7 @@
   "demo.map.layers.title": "Couches",
   "demo.map.layers.poi": "POI",
   "demo.map.layers.buildings": "Bâtiments",
+  "demo.map.layers.building_part": "Bâtiments particuliers",
   "demo.map.panel.prev": "Elément précédent",
   "demo.map.panel.next": "Elément suivant",
   "about.title": "Mon parcours",
