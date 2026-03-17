@@ -14,28 +14,34 @@ export function BlogList({ posts }: { posts: BlogMeta[] }) {
   return (
     <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
       {posts.map((post) => (
-        <Link key={post.slug} to={`/blog/${post.slug}`}>
-          <Card className="h-full flex flex-col hover:border-primary/50 transition-colors duration-200">
-            <CardHeader className="flex-1">
+        <Card key={post.slug} className="flex flex-col h-full hover:border-primary/50 transition-colors duration-200">
+          <Link key={post.slug} to={`/blog/${post.slug}`} className="flex-1">
+            <CardHeader>
               <div className="flex justify-between items-start mb-2">
                 <span className="text-sm font-medium text-muted-foreground bg-muted px-2 py-1 rounded-md">
-                  {new Date(post.date).toLocaleDateString()}
+                  {new Date(post.date).toLocaleDateString(undefined, {
+                    year: "numeric",
+                    month: "short",
+                  })}
                 </span>
                 <div className="flex gap-2 flex-wrap justify-end">
                   {post.audience.map((audience: string) => (
-                    <span key={audience} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-md">
+                    <span
+                      key={audience}
+                      className="text-[10px] tracking-widest font-bold border border-accent/50 text-accent-foreground px-2 py-0.5 rounded-sm shadow-sm"
+                    >
                       {audience}
                     </span>
                   ))}
                 </div>
               </div>
               <CardTitle className="line-clamp-2">{post.title}</CardTitle>
-              <CardDescription className="line-clamp-3 mt-2">
+              <CardDescription className="line-clamp-3 mt-2 normal-case">
                 {post.description}
               </CardDescription>
             </CardHeader>
-          </Card>
-        </Link>
+          </Link>
+        </Card>
       ))}
       {posts.length === 0 && (
         <p className="text-muted-foreground col-span-full text-center py-10 opacity-70">
