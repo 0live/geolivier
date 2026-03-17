@@ -1,8 +1,8 @@
 import {
-    Card,
-    CardDescription,
-    CardHeader,
-    CardTitle,
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
 } from "@/shared/components/ui/card";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router";
@@ -22,9 +22,9 @@ export function BlogList({ posts }: { posts: BlogMeta[] }) {
                   {new Date(post.date).toLocaleDateString()}
                 </span>
                 <div className="flex gap-2 flex-wrap justify-end">
-                  {post.tags.map((tag: string) => (
-                    <span key={tag} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-md">
-                      {tag}
+                  {post.audience.map((audience: string) => (
+                    <span key={audience} className="text-xs bg-primary/10 text-primary px-2 py-1 rounded-md">
+                      {audience}
                     </span>
                   ))}
                 </div>

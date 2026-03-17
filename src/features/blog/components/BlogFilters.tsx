@@ -42,7 +42,7 @@ export function BlogFilters({
             ref={tagsAnchor}
             values={selectedTags}
             showClear
-            placeholder={selectedTags.length > 0 ? "" : t("filters.tags_placeholder", "Select tags...")} 
+            placeholder={selectedTags.length > 0 ? "" : t("filters.audience_placeholder", "Select audience...")} 
           />
           <ComboboxContent anchor={tagsAnchor}>
             <ComboboxList>
@@ -58,7 +58,7 @@ export function BlogFilters({
 
       <div className="flex-1 min-w-[240px] px-2 w-full">
         <p className="text-sm font-medium text-muted-foreground mb-4">
-          {t("filters.date", "Date Range")}
+          {t("filters.dateRange", "Date Range")}
           {dateRange && (
             <span className="ml-2 text-xs text-primary font-normal">
               {new Date(dateRange[0]).toLocaleDateString(undefined, {

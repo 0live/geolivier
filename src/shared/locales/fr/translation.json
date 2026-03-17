@@ -22,6 +22,8 @@
   "error.retry": "Réessayer",
   "error.goHome": "Retour à l'accueil",
   "filters.tags": "Sélectionner des tags...",
+  "filters.audience_placeholder": "Filtrer par public",
+  "filters.dateRange": "Filtrer par période",
   "filters.clear": "Effacer les filtres",
   "demo.showToast": "Clique ici pour voir un toast",
   "demo.toast.title": "Je suis un composant React",

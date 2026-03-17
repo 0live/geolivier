@@ -22,6 +22,8 @@
   "error.retry": "Try again",
   "error.goHome": "Go back home",
   "filters.tags": "Select tags...",
+  "filters.audience_placeholder": "Filter by audience",
+  "filters.dateRange": "Filter by date range",
   "filters.clear": "Clear filters",
   "demo.showToast": "Click me",
   "demo.toast.title": "I am a React component",
