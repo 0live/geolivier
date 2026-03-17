@@ -8,7 +8,7 @@ export function useBlogFilters() {
   const setBlogFilters = useAppStore((state) => state.setBlogFilters);
   const clearBlogFilters = useAppStore((state) => state.clearBlogFilters);
 
-  const availableTags = Array.from(new Set(posts.flatMap((post) => post.tags))).sort();
+  const availableTags = Array.from(new Set(posts.flatMap((post) => post.audience))).sort();
 
   const timestamps = posts.map((post) => new Date(post.date).getTime());
   const minTimestamp = timestamps.length > 0 ? Math.min(...timestamps) : 0;
