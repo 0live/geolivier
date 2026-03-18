@@ -71,5 +71,13 @@
   "about.experience.2.title": "Stagiaire SIG",
   "about.experience.2.company": "APEM",
   "about.experience.2.period": "2013",
-  "about.experience.2.description": "Création d'interfaces utilisateur réactives et interactives, collaboration avec des designers et optimisation des performances des applications."
+  "about.experience.2.description": "Création d'interfaces utilisateur réactives et interactives, collaboration avec des designers et optimisation des performances des applications.",
+  "about.experience.3.title": "Master Informatique Géographique (SIG)",
+  "about.experience.3.company": "Institut National Polytechnique Toulouse",
+  "about.experience.3.period": "2012 - 2013",
+  "about.experience.3.description": "Programmation, modélisation, SIG et télédétection",
+  "about.experience.4.title": "Master Environnement et Cartographie des risques",
+  "about.experience.4.company": "Université Toulouse II",
+  "about.experience.4.period": "2010 - 2012",
+  "about.experience.4.description": "Environnement, SIG"
 }

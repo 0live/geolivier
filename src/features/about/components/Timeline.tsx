@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
+import { Building2, Calendar, GraduationCap } from "lucide-react";
 import { useTimeline } from "@/features/about/hooks/useTimeline";
-import { Building2, Calendar } from "lucide-react";
 import { Link } from "react-router";
 
 export default function Timeline() {
@@ -14,7 +14,8 @@ export default function Timeline() {
       if (match) {
         const [, label, url] = match;
         const isExternal = url.startsWith("http");
-        const className = "text-primary hover:underline font-medium transition-colors hover:text-primary/80";
+        const className =
+          "text-primary hover:underline font-medium transition-colors hover:text-primary/80";
 
         if (isExternal) {
           return (
@@ -56,6 +57,7 @@ export default function Timeline() {
               period,
               technologies,
               title,
+              type,
             },
             index
           ) => (
@@ -67,7 +69,11 @@ export default function Timeline() {
               <div className="space-y-3">
                 <div className="flex items-center gap-2.5">
                   <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-accent">
-                    <Building2 className="h-5 w-5 text-muted-foreground" />
+                    {type === "education" ? (
+                      <GraduationCap className="h-5 w-5 text-muted-foreground" />
+                    ) : (
+                      <Building2 className="h-5 w-5 text-muted-foreground" />
+                    )}
                   </div>
                   <span className="font-medium text-base">{company}</span>
                 </div>
