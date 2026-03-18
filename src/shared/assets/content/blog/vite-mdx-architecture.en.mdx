@@ -65,15 +65,9 @@ To display the list of articles on the homepage, the application first needs to 
 1.  **Indexing**: We loop through all the import functions listed by Vite to retrieve their metadata. Technically, the browser downloads each article's compiled file. It's very fast because these are just small fragments of JS code, but it means the data is already "there" behind the scenes.
 2.  **Deferred Rendering (Lazy Loading)**: Even if the code is downloaded, it is never executed unnecessarily. Thanks to React's `lazy()`, the article component is only instantiated and displayed if the user actually clicks on it (thus avoiding premature loading of images or heavy resources).
 
-## But how do we retrieve the metadata?
-
-During the build process, two **Remark** plugins (`remark-frontmatter` and `remark-mdx-frontmatter`) intercept the file.
-
-They transform the YAML block into a simple JavaScript variable named `frontmatter`, which is automatically added to the file's exports. When my code performs an `import`, it doesn't receive raw text, but a ready-to-use JavaScript object. It’s fast, typed, and perfectly integrated into the application's lifecycle.
-
 ## Why this system?
 
-- **Pragmatism and Performance**: For a portfolio, the download overhead is negligible compared to the gain in simplicity. If the site were to become massive, I could simply generate a JSON index at build time. For now, Vite's efficiency makes this optimization unnecessary.
+- **Pragmatism and Performance**: For a portfolio, the download overhead is negligible compared to the gain in simplicity. If the site were to become massive, it would be enough to generate a JSON file instead of indexing. For now, Vite's efficiency makes this optimization unnecessary.
 - **Developer Experience**: Writing an article is just about creating a Markdown file. I benefit from the power of React (displaying web components if necessary) and I have full control to handle display automatically based on the selected language.
 - **Zero Maintenance**: No need for a database server or managing CMS access. Everything is versioned in Git.
 

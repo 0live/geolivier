@@ -65,15 +65,9 @@ Pour afficher la liste des articles sur la page d'accueil, l'application doit d'
 1.  **L'indexation** : On boucle sur toutes les fonctions d'importation listées par Vite pour récupérer leurs métadonnées. Techniquement, le navigateur télécharge le fichier compilé de chaque article. C'est très rapide car ce ne sont que des petits fragments de code JS, mais cela signifie que la donnée est déjà "là", en coulisses.
 2.  **Le rendu différé (Lazy Loading)** : Même si le code est téléchargé, il n'est jamais exécuté inutilement. Grâce au `lazy()` de React, le composant de l'article n'est instancié et affiché que si l'utilisateur clique réellement dessus (évitant ainsi le chargement d'images ou de ressources lourdes prématurément).
 
-## Mais comment récupère-t-on les métadonnées ?
-
-Lors du build, deux plugins **Remark** (`remark-frontmatter` et `remark-mdx-frontmatter`) interceptent le fichier.
-
-Ils transforment le bloc YAML en une simple variable JavaScript nommée `frontmatter`, qui est automatiquement ajoutée aux exports du fichier. Quand mon code fait un `import`, il ne reçoit pas du texte brut, mais un objet JavaScript déjà prêt. C'est rapide, typé et parfaitement intégré au cycle de vie de l'application.
-
 ## Pourquoi ce système ?
 
-- **Pragmatisme et Performance** : Pour un portfolio, le surpoids au téléchargement est négligeable par rapport au gain de simplicité. Si le site devenait géant, il suffirait de générer un index JSON au build. Pour l'instant, la légèreté de Vite rend cette optimisation superflue.
+- **Pragmatisme et Performance** : Pour un portfolio, le surpoids au téléchargement est négligeable par rapport au gain de simplicité. Si le site devenait géant, il suffirait de générer un fichier JSON à la place de l'indexation. Pour l'instant, la légèreté de Vite rend cette optimisation superflue.
 - **Expérience développeur** : Écrire un article, c'est juste créer un fichier Markdown. On profite de la puissance de React et j’ai la main pour gérer l’affichage automatiquement en fonction de la langue sélectionnée.
 - **Zéro maintenance** : Pas besoin de serveur, de base de données ou de gérer des accès CMS. Tout est versionné dans Git.
 
