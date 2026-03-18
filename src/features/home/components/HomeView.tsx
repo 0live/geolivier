@@ -34,7 +34,7 @@ export function HomeView() {
               {[
                 "React",
                 "Maplibre",
-                "FastApi",
+                "FastAPI",
                 "Martin",
                 "PostGIS",
                 "Cloud native formats",

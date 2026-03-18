@@ -20,5 +20,12 @@ export const SocialLinks = ({ iconSizeClass = "h-5 w-5" }: { iconSizeClass?: str
     >
       <Icons.linkedin className={iconSizeClass} />
     </a>
+    <a 
+      href="mailto:olivier.ribiere@protonmail.com" 
+      className="text-muted-foreground hover:text-foreground transition-colors"
+      aria-label="Email"
+    >
+      <Icons.mail className={iconSizeClass} />
+    </a>
   </>
 );
