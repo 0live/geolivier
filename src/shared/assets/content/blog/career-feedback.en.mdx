@@ -1,0 +1,61 @@
+---
+title: "The Geomatician facing Computer Science"
+date: "2026-03-19"
+description: "A look back at the experience of a geomatician turned GIS developer."
+audience: ["Geomatician", "Developer"]
+---
+
+## The Famous Impostor Syndrome
+
+I don’t know if a young cartographer, or anyone with the desire to build more than just maps, will ever read this text, but I’m writing it thinking that I would have loved to stumble upon a testimonial like this at the beginning of my career. While building this site—specifically while listing a few projects that represent my journey—I was reminded of how far I’ve come since my geography studies.
+
+No matter the subject, geography is unique in that it is always a discipline that encompasses others: sociology, economics, geology, and so on. Geographers are therefore rarely specialists in a single science, but rather master a portion of one which they associate with a spatial dimension: geopolitics, urban planning, and, of course, geomatics.
+
+In the case of geomatics, the gap between geography and computer science (IT)—which are studied through completely different university curricula—is quite significant. You often find two types of profiles in this profession: geographers who specialize in mastering concepts and tools, and IT professionals who develop a passion for everything related to cartography. And let’s be honest: I think it’s much simpler to come from an IT background than from geography, as the volume of new concepts to grasp is much smaller.
+
+Coming from a scientific research background in geography, it was a long road before I could feel legitimate in a "senior" GIS developer role, and even today, impostor syndrome persists. Creating a simple web map with Leaflet and a bit of HTML is one thing; creating complex applications, administering servers, and producing code with the appropriate patterns is another.
+
+I’ve often had the chance to talk with geomaticians who were interested in or fascinated by what a developer could do, but didn't feel capable of taking the plunge. If that’s your case—even if you’re not looking to become a developer but just want to feel more confident in your daily work—here are a few tips that might help demystify part of our trade.
+
+## 1. Learn the Basics
+
+Regardless of which field interests you most in geomatics—spatial analysis, remote sensing, or web mapping—understanding a few fundamental principles of computer science will remove the feeling of facing a "black box" that produces magic whenever you interact with it. Whether for GIS, remote sensing, or development, there is a common foundation that helps you feel more at ease. In my humble opinion, knowing these few tools will make you a better geomatician:
+
+- **Linux**. This is generally not something you learn to master during a geomatics degree, yet practicing this OS is essential. Although the king (of marketing, at least), ESRI, is on Windows, the majority of the world's geospatial infrastructure (tile servers, databases, Cloud GIS) runs on this system. Not grasping Linux means potentially depriving yourself of many software options, being unable to run a script on a server, etc.
+- **Python**. Even if you don't aspire to become a developer, mastering Python will be an obvious asset in your career. Since it allows you to extend the capabilities of desktop GIS (QGIS plugins, Arcpy, among others), is the flagship language of data science, and is easy to learn, if there’s only one to remember, it’s this one. To become a web developer, the list is obviously longer.
+- **Algorithms and Data Structures**. Once you master a programming language like Python—and thus loops, conditions, and the main data structures—enriching these skills with theoretical knowledge of major algorithms and data formats (arrays, linked lists, trees...) will help you reach a new level. You will understand how an algorithm is designed, what problem it aims to solve, and how memory and access time are managed on a machine; in short, how computer science actually works.
+- **Git and GitHub**. It’s difficult to do IT efficiently without mastering Git, yet this is the case for many geomaticians. Very quick to learn, it will allow you to work collaboratively, back up your work effectively, and no longer feel lost when you need to go to GitHub to pull a repository containing an algorithm that interests you.
+- **Docker**. If you ever need to use software like tile servers, databases, or anything else, Docker allows you to run them in an isolated and very easy-to-reproduce environment. It is also indispensable when working on servers. The basic concepts are simple, and LLMs are very effective at helping you with the design.
+
+That makes five skills; they are accessible if you have the right training materials, and I can certify that they will change the way you work. When it comes to learning, my best advice is to seek out resources that go beyond simple "how-to" tutorials.
+
+Look for courses that mirror a university-level approach—the kind that focuses on computer science fundamentals and deep logic rather than just memorizing commands. Learning basic Git commands is easy; understanding the "hash" concept at the heart of Git will take you to a completely different level of understanding. There are excellent deep-dive courses available for each element listed above.
+
+Most importantly, this learning process helps you realize something fundamental: computer science is logical (at least the basic concepts are). Once you understand how things work under the hood, you realize it’s perfectly consistent. The end result is always a 1 or a 0; there is no in-between (we’ll talk about that again with quantum computers).
+
+## 2. Dealing with AI
+
+It is difficult today to talk about learning, especially in IT, without mentioning AI. Without getting into the debate about their reliability or the evolution of the service sector in the coming years, the arrival of these tools is clearly a turning point in the developer's profession—perhaps a bit less so for the geomatician, with the exception of remote sensing, at least at the time of writing.
+
+If you master the basics, AI is an excellent companion for getting explanations on a specific point. It also allows you to go much faster—I'm not telling anyone anything new there. The most important thing for me is to NEVER delegate understanding to this tool. If you're stuck on an algorithm to implement, AI can help you, but make sure you understand its answers, question it on what doesn't seem clear, and take notes on what you learn during your exchanges with a model.
+
+The danger, for me, is gradually losing mastery over what we do and having no idea what’s happening when things stop working and the AI can't help (and that often happens faster than you think if you’re doing pure "vibe-coding," for example). Or simply losing one's cognitive abilities over the long term. I found this <a href="https://www.youtube.com/watch?v=4xq6bVbS-Pw" target="_blank" rel="noopener noreferrer">video</a> very interesting on the subject.
+
+import yoda from "./img/yoda.gif";
+
+<div className="flex justify-center my-8">
+   {" "}
+  <img
+    src={yoda}
+    alt="Yoda patience"
+    className="w-full max-w-xs rounded-xl shadow-lg border-2 border-primary/20"
+  />
+</div>
+
+## 3. Keep Learning Concepts as You Progress
+
+The more you progress in your career, the more important the thinking phase prior to implementation becomes. It is therefore vital to understand why it is preferable to do things one way rather than another, and what the advantages and limitations of each solution are.
+
+In web development, this typically involves architectural patterns: why do they exist and what problems do they solve? I mentioned AI earlier, and it’s also a great example. Who hasn't had a "Wow" effect upon first using a generative AI, only to be baffled by the sheer poor quality of another response?
+
+Understanding how these models work, how they are trained, and what a "token" is will help you exploit these tools to the fullest while remaining aware of their limits. You don't need to understand the details of neural networks, obviously, but avoiding "black box syndrome" as much as possible could summarize the philosophy of this article.

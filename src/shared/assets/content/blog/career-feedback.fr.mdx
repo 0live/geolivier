@@ -1,0 +1,58 @@
+---
+title: "Le géomaticien face à l'informatique"
+date: "2026-03-19"
+description: "Un retour d'expérience d'un géomaticien devenu développeur SIG."
+audience: ["Géomaticien", "Développeur"]
+---
+
+## Le fameux syndrome de l'imposteur
+
+Je ne sais pas si un ou une jeune cartographe, ou quiconque ayant le désir de fabriquer plus que des cartes, lira un jour ce texte, mais je l’écris en me disant que j’aurais aimé tomber sur un témoignage comme celui-ci en début de carrière. En construisant ce site, notamment en listant quelques projets qui représentent mon parcours, cela m’a rappelé le chemin parcouru depuis mes études en géographie.
+
+Peu importe le sujet, la géographie a ceci de particulier qu’elle est toujours une discipline qui en englobe d’autres : sociologie, économie, géologie, etc. Les géographes sont donc rarement des spécialistes d’une seule science, mais en maîtrisent une partie qu’ils associent à une dimension spatiale : géopolitique, urbanisme, et évidemment géomatique.
+
+Dans le cas de la géomatique, l’espace entre la géographie et l’informatique, que l’on étudie à travers des cursus universitaires totalement différents, est assez important. On retrouve souvent deux types de profils dans cette profession : les géographes qui se spécialisent dans la maîtrise des concepts et outils, et des informaticiens qui se prennent de passion pour tout ce qui est lié à la cartographie. Et on ne va pas se mentir, je pense qu’il est beaucoup plus simple de venir de l’informatique que de la géographie, la quantité de nouveaux concepts à appréhender étant bien moindre.
+
+Venant de la recherche scientifique en géographie, le chemin a été long avant que je puisse me sentir légitime dans un rôle de développeur SIG « senior », et même aujourd’hui le syndrome de l’imposteur persiste. Créer une simple webmap avec Leaflet et un peu de HTML est une chose, créer des applications complexes, administrer des serveurs, produire du code avec les patterns adaptés en est une autre.
+
+J’ai souvent eu l’occasion d’échanger avec des géomaticiens qui étaient intéressés ou fascinés par ce que pouvait faire un développeur, mais ne se sentaient pas aptes à faire le grand saut. Si tel est ton cas, et même si tu ne cherches pas à devenir développeur mais juste à te sentir plus serein dans ton travail quotidien, voici quelques conseils qui pourront peut être aider à démystifier une partie de notre métier.
+
+## 1. Apprendre les bases
+
+Peu importe le champ qui vous intéresse le plus dans la géomatique — les analyses spatiales, la télédétection ou le webmapping —, comprendre quelques principes fondamentaux de l’informatique vous enlèvera la sensation d’être face à une boîte noire d’où il sort quelque chose de magique lorsqu’on interagit avec elle. Que ce soit pour les SIG, la télédétection ou le développement, il y a un socle commun qui aide à se sentir plus à l'aise. À mon humble avis, la connaissance de ces quelques outils fera de vous un meilleur géomaticien :
+
+- **Linux**. Ce n’est en général pas quelque chose que l’on apprend à maîtriser durant un cursus en géomatique et pourtant la pratique de cet OS est indispensable : bien que le roi (du marketing en tout cas) ESRI soit sur Windows, la majorité de l'infrastructure géospatiale mondiale (serveurs de tuiles, bases de données, SIG Cloud) repose sur ce système. Ne pas appréhender Linux, c’est donc potentiellement se priver de beaucoup de logiciels, ne pas être capable de faire tourner un script sur un serveur, etc.
+- **Python**. Même si vous n’aspirez pas à devenir développeur, maîtriser Python sera un atout évident dans votre carrière. Dans la mesure où il permet d’étendre les capacités des SIG bureautiques (les plugins QGIS, Arcpy entre autres), que c’est le langage phare de la data science et qu’il est simple à apprendre, s’il n’y en a qu’un à retenir, c’est celui-là. Pour devenir développeur web, la liste est évidémment plus longue.
+- **L’algorithmie et les structures de données**. Une fois que vous maîtrisez un langage de programmation comme Python, et donc les boucles, les conditions et les principales structures de données, enrichir ces compétences avec des connaissances théoriques sur les principaux algorithmes et formats de données (tableaux, listes chaînées, arbres…) vous aidera à passer un cap. Vous comprendrez comment est conçu un algorithme, à quelle problématique il doit répondre, comment sont gérés la mémoire et le temps d’accès sur une machine ; en bref, comment fonctionne l'informatique concrètement.
+- **Git et GitHub**. Difficile de faire de l’informatique de manière efficace si on ne maîtrise pas Git, ce qui est pourtant le cas de beaucoup de géomaticiens. Très rapide à assimiler, cela vous permettra de travailler de manière collaborative, de sauvegarder votre travail efficacement et de ne plus être perdu quand il faudra aller sur GitHub pour récupérer un dépôt contenant un algorithme qui vous intéresse.
+- **Docker**. Si vous avez un jour besoin d’utiliser des logiciels comme des serveurs de tuiles, des bases de données ou n’importe quoi d’autre, Docker vous permettra de faire tourner cela dans un environnement isolé et très facile à reproduire. C’est également indispensable lorsque vous travaillez sur des serveurs. Les concepts de base sont simples, et les LLM sont très efficaces pour vous aider à la conception.
+
+Cela fait cinq compétences ; elles sont accessibles si vous avez les bons supports de formation, et je peux certifier qu’elles changeront votre façon de travailler. Et puisqu’on parle de support, je ne peux que conseiller le site <a href="https://dyma.fr" target="_blank" rel="noopener noreferrer">Dyma.fr</a>. Je n’ai aucun lien avec cette boîte, il ne s’agit donc pas de publicité cachée. Mais leurs formations sont les meilleures que j’ai trouvées en français pour le moment. On y apprend autant les concepts que la mise en pratique, comme on pourrait le faire dans un cours universitaire. Apprendre les commandes de base de Git est facile, connaître le concept de hash au cœur de Git vous fera passer à un autre niveau de compréhension. Ils offrent des formations sur chacun des éléments listés ci-dessus, et bien plus encore si vous décidez de vous orienter vers le développement web.
+
+Et surtout, cet apprentissage permet de réaliser quelque chose de fondamental : l’informatique est logique (du moins les concepts de base). Une fois qu’on comprend comment les choses fonctionnent sous le capot, on se rend compte que c’est parfaitement cohérent. La finalité est toujours un 1 ou un 0, il n’y a pas d'entre-deux (on en reparlera avec les ordinateurs quantiques).
+
+## 2. Composer avec l’IA
+
+Il est difficile aujourd’hui de parler d’apprentissage, et encore plus en informatique, sans mentionner l’IA. Sans rentrer dans le débat sur leur fiabilité ou les évolutions du secteur tertiaire dans les prochaines années, l’arrivée de ces outils est clairement un tournant dans le métier de développeur, peut être un peu moins pour le géomaticien, exception faite de la télédétection, du moins à l’heure où j’écris ces lignes.
+
+Si vous maîtrisez les bases, l’IA est un excellent accompagnateur pour obtenir des explications sur un point précis. Cela permet également d’aller beaucoup plus vite, je ne n'apprendrai rien à personne. Le plus important pour moi est de ne JAMAIS déléguer la compréhension à cet outil. Si vous séchez sur un algorithme à implémenter, l’IA peut vous aider, mais assurez-vous de comprendre ses réponses, de l’interroger sur ce qui ne vous semble pas clair, de noter ce que vous apprenez durant vos échanges avec un modèle.
+
+Le danger est pour moi de perdre petit à petit la maîtrise de ce que l’on fait et de n’avoir aucune idée de ce qu’il se passe quand ça ne marche plus et que l’IA ne peut pas vous aider (et ça arrive souvent plus vite qu’on ne le pense si on fait du pur « vibe-coding » par exemple). Ou tout simplement de perdre ses capacités cognitives sur le long terme. J'avais trouvé cette <a href="https://www.youtube.com/watch?v=4xq6bVbS-Pw" target="_blank" rel="noopener noreferrer">vidéo</a> très intéressante à ce sujet.
+
+import yoda from "./img/yoda.gif";
+
+<div className="flex justify-center my-8">
+  <img
+    src={yoda}
+    alt="Yoda patience"
+    className="w-full max-w-xs rounded-xl shadow-lg border-2 border-primary/20"
+  />
+</div>
+
+## 3. Continuez d’apprendre les concepts quand vous avancez
+
+Plus vous progresserez dans votre carrière, plus la réflexion en amont de la réalisation sera importante. Il est donc primordial de comprendre pourquoi il est préférable de faire les choses d’une telle façon plutôt qu’une autre, quels sont les avantages et les limites de chaque solution.
+
+Dans le développement web, cela va typiquement être les patterns architecturaux : pourquoi existent-ils et quels problèmes résolvent-ils ? Je parlais de l’IA précédemment et c’est aussi un très bon exemple. Qui n’a pas eu un effet « Waouh » à la première utilisation d’une IA générative avant d’être interloqué par la nullité d’une autre réponse ?
+
+Comprendre comment fonctionnent ces modèles, comment sont-ils entraînés, qu’est-ce qu’un token, vous aidera à exploiter ces outils au maximum tout en étant conscient de leurs limites. Pas besoin de comprendre le détail des réseaux de neurones évidemment, mais éviter au maximum le syndrome de la boîte noire pourrait résumer la pensée de cet article.
