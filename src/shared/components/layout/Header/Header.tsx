@@ -7,6 +7,8 @@ import { LanguageSelector } from "../LanguageSelector";
 import { MobileMenu } from "./MobileMenu";
 import { NavLinks } from "./NavLinks";
 import { SocialLinks } from "./SocialLinks";
+import cvEn from "@/shared/assets/Olivier_Ribiere_CV_EN.pdf";
+import cvFr from "@/shared/assets/Olivier_Ribiere_CV_FR.pdf";
 
 const Logo = () => (
   <Link to="/" className="flex items-center">
@@ -22,9 +24,7 @@ const Logo = () => (
 
 export function Header() {
   const { t, i18n } = useTranslation();
-  const cvPath = i18n.language === "fr" 
-    ? "/src/shared/assets/Olivier_Ribiere_CV_FR.pdf" 
-    : "/src/shared/assets/Olivier_Ribiere_CV_EN.pdf";
+  const cvPath = i18n.language === "fr" ? cvFr : cvEn;
 
   return (
     <header className="border-b bg-card">
