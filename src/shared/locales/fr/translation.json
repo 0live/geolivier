@@ -18,6 +18,7 @@
   "blog.empty": "Aucun article pour le moment.",
   "projects.description": "Extraits de mon parcours.",
   "projects.empty": "Aucun projet pour le moment.",
+  "projects.wip": "En cours",
   "projects.back": "Retour aux projets",
   "blog.back": "Retour au blog",
   "error.title": "Quelque chose s'est mal passé",

@@ -1,9 +1,12 @@
+export type ProjectStatus = "wip" | "completed";
+
 export interface ProjectMeta {
   slug: string;
   title: string;
   description: string;
   tags: string[];
   year: number;
+  status?: ProjectStatus;
   repoUrl?: string;
   liveUrl?: string;
   publicationUrl?: string;

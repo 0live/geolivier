@@ -18,6 +18,7 @@
   "blog.empty": "No articles yet.",
   "projects.description": "Snapshots of my journey.",
   "projects.empty": "No projects yet.",
+  "projects.wip": "In progress",
   "projects.back": "Back to projects",
   "blog.back": "Back to blog",
   "error.title": "Something went wrong",

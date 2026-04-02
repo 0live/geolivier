@@ -1,0 +1,71 @@
+---
+title: "Canopy"
+description: "Plateforme open-source de gestion de données cartographiques et de production de cartes web"
+status: "wip"
+tags:
+  [
+    "MapLibre",
+    "PostGIS",
+    "FastAPI",
+    "Martin",
+    "React",
+    "IA",
+    "Cloud native formats",
+  ]
+year: 2026
+repoUrl: "https://github.com/0live/Canopy"
+---
+
+## Un écosystème open-source pour la production de cartes web
+
+Le but de Canopy est de proposer une alternative open-source aux solutions propriétaires de production de cartes web comme Mapbox Studio.
+Il s'agit d'un écosystème complet, basé sur des briques open-source de références, déployable en local ou dans le cloud en un clic.
+
+L'objectif est d'offrir une interface intuitive, un système performant basé sur des technologies et formats modernes pour permettre à des cartographes de facilement publier des cartes sur le web, et de mettre une API à disposition des développeurs pour une intégration externe.
+
+Basée sur des technologies très populaires, cette plateforme peut également servir de socle technique pour des développeurs souhaitant créer une application web avec une composante cartographique.
+
+---
+
+## Fonctionnalités
+
+### Gestion des utilisateurs et des équipes
+
+- Système de rôles granulaire : accès aux données, édition, création de cartes, administration
+- Espaces de travail dédiés par équipe, avec permissions spécifiques
+
+### Données géospatiales
+
+- Import de données vectorielles et tabulaires (GeoJSON, Shapefile, CSV…)
+- Stockage dans PostGIS ou export au format **PMTiles** (cloud native)
+- Édition des données PostGIS via des clients externes (QGIS, etc.)
+- Génération automatique de flux de tuiles vectorielles via **Martin**
+- Connexion à des sources externes (OvertureMaps, etc.)
+
+### Production cartographique
+
+- Éditeur de style **MapLibre** intégré, assisté par IA
+- Gestion des ressources : icônes, polices, imports de styles existants
+- Organisation des cartes en collections
+
+### Publication et partage
+
+- Export en **API de style** MapLibre
+- Partage en **webmap** autonome : légendes, popups, interactions configurables
+
+---
+
+## Architecture technique
+
+Canopy est conçu comme une application cloud native, entièrement orchestrée par Docker.
+
+| Rôle                           | Technologie             |
+| ------------------------------ | ----------------------- |
+| Backend / API                  | **FastAPI** + GDAL      |
+| Frontend                       | **React** + DuckDB Wasm |
+| Base de données géospatiale    | **PostGIS**             |
+| Serveur de tuiles vectorielles | **Martin**              |
+| Éditeur de style               | **Maputnik**            |
+| Rendu cartographique           | **MapLibre GL JS**      |
+| Reverse proxy                  | **Caddy**               |
+| Infrastructure                 | **Docker Compose**      |

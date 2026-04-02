@@ -1,0 +1,71 @@
+---
+title: "Canopy"
+description: "Open-source platform for geospatial data management and web map production"
+status: "wip"
+tags:
+  [
+    "MapLibre",
+    "PostGIS",
+    "FastAPI",
+    "Martin",
+    "React",
+    "AI",
+    "Cloud native formats",
+  ]
+year: 2026
+repoUrl: "https://github.com/0live/Canopy"
+---
+
+## A modern ecosystem for web map production
+
+Canopy aims to provide an open-source alternative to proprietary web map production platforms such as Mapbox Studio.
+It is a complete ecosystem, built on best-in-class open-source components, deployable locally or in the cloud in a single click.
+
+The goal is to deliver an intuitive interface and a high-performance system based on modern technologies and formats, enabling cartographers to easily publish maps on the web while exposing an API for developers to integrate externally.
+
+Built on widely adopted technologies, the platform can also serve as a technical foundation for developers looking to build web applications with a mapping component.
+
+---
+
+## Features
+
+### User and team management
+
+- Granular role system: data access, editing, map creation, administration
+- Dedicated workspaces per team with specific permissions
+
+### Geospatial data
+
+- Import of vector and tabular data (GeoJSON, Shapefile, CSV…)
+- Storage in PostGIS or export to **PMTiles** format (cloud native)
+- PostGIS data editing via external clients (QGIS, etc.)
+- Automatic generation of vector tile streams via **Martin**
+- Connection to external data sources (OvertureMaps, etc.)
+
+### Map production
+
+- Integrated **MapLibre** style editor, AI-assisted
+- Resource management: icons, fonts, import of existing styles
+- Organisation of maps into collections
+
+### Publishing and sharing
+
+- Export as a MapLibre **style API**
+- Sharing as a standalone **webmap**: configurable legends, popups, and interactions
+
+---
+
+## Technical architecture
+
+Canopy is designed as a cloud-native application, fully orchestrated by Docker.
+
+| Role                | Technology              |
+| ------------------- | ----------------------- |
+| Backend / API       | **FastAPI** + GDAL      |
+| Frontend            | **React** + DuckDB Wasm |
+| Geospatial database | **PostGIS**             |
+| Vector tile server  | **Martin**              |
+| Style editor        | **Maputnik**            |
+| Map rendering       | **MapLibre GL JS**      |
+| Reverse proxy       | **Caddy**               |
+| Infrastructure      | **Docker Compose**      |
