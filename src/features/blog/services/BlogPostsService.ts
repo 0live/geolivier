@@ -8,7 +8,11 @@ export class BlogPostsService {
 
   static async fetchAll(lang: string): Promise<BlogMeta[]> {
     const posts = await this.mdxManager.fetchAll(lang);
-    return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    return posts.sort((a, b) => {
+      const dateA = new Date(a.date).getTime();
+      const dateB = new Date(b.date).getTime();
+      return dateB - dateA;
+    });
   }
 
   static getComponent(slug: string, lang: string): LazyExoticComponent<ComponentType> {

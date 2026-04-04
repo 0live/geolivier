@@ -24,7 +24,7 @@ export function useBlogFilters() {
       !dateRange || (postTimestamp >= dateRange[0] && postTimestamp <= dateRange[1]);
 
     return matchesTags && matchesDate;
-  });
+  }).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return {
     filteredPosts,

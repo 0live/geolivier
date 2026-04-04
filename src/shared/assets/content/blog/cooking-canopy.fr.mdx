@@ -1,0 +1,98 @@
+---
+title: "Cooking Canopy"
+date: "2026-04-04"
+description: "Alternative Open Source à Mapbox Studio, ou un simple POC en fonction du temps que j'arriverai à y consacrer."
+audience: ["Développeur", "Géomaticien"]
+---
+
+import canopyStack from "./img/Canopy_stack.png";
+import { CheckCircle2, Clock, Circle, Activity } from "lucide-react";
+
+## **Canopy : un projet de "Studio" pour les tuiles vectorielles**
+
+Alors qu’on ne parle aujourd'hui que de DuckDB, d’IA et de formats _cloud-native_, j’ai décidé de me lancer sur un projet que j’avais en tête depuis un moment : **Canopy**, une application open-source pour servir des tuiles vectorielles (VT) et créer des cartes basées sur les spécifications de style Mapbox/MapLibre.
+
+### **Pourquoi ?**
+
+Bien que les tuiles vectorielles et les bibliothèques de cartographie web associées <a href="https://www.mapbox.com/blog/10-years-of-mapbox-gl" target="_blank" rel="noopener noreferrer">ne soient pas nouvelles</a>, il n’est jamais simple de mettre en place une API de VT dans une application métier. Ayant travaillé plusieurs années sur la création de ce type d'outils, j’ai souvent été frustré par les solutions existantes.
+
+Il existe de nombreux serveurs de VT comme **Tegola**, **TileServer GL** ou **Martin**, mais ce sont des logiciels dédiés uniquement au service de données. Il faut donc les connecter à des bases de données, gérer les procédures d’import, les droits d’accès, le cache, etc. **GeoServer** permet de servir des VT, mais avec des performances qui semblent moindres.
+
+Vient ensuite la question de l'affichage : il faut créer soi-même ses styles, dont la syntaxe, bien que très puissante, n’est pas à la portée de tout le monde. Cela impose soit d'écrire le JSON à la main, soit d'utiliser **Maputnik**, qui reste l'éditeur le plus établi (bien qu'il ne permette pas d'exploiter tout le potentiel des spécifications Mapbox/MapLibre). GeoServer, par exemple, ne propose pas d’interface intégrée pour créer ces styles.
+
+Au final, hormis Mapbox Studio, MapTiler et les outils ArcGIS, il n’existe pas d’outil "tout-en-un" qui permette de :
+
+- Fournir une API d’import de fichiers vers une base de données.
+- Gérer les droits d’accès et de partage sur ces données.
+- Servir les données et gérer le cache.
+- Éditer des styles et gérer des bibliothèques de cartes.
+- Personnaliser les cartes en important des icônes, des polices, etc.
+
+Bien que MapTiler et Mapbox Studio proposent des offres gratuites, les données sont hébergées sur leurs serveurs. Cela expose l'utilisateur à des changements de politique tarifaire et limite les possibilités d'ajouts de fonctionnalités spécifiques.
+
+### **Canopy : un "Mapbox Studio" hébergeable**
+
+Ceci étant un _side project_, son avancement dépendra de mon temps libre, mais l’idée est de créer un socle applicatif permettant de réaliser tout ce qui est listé précédemment de manière intuitive. Ce projet vise deux publics :
+
+1. **Les cartographes** cherchant une infrastructure simple à déployer pour créer des cartes partageables tout en profitant des dernières avancées technologiques.
+2. **Les développeurs** qui ne souhaitent pas passer des heures à configurer manuellement une API cartographique.
+
+Cette plateforme est pensée pour deux types d'usages : soit comme une API de cartes et de styles utilisable dans plusieurs projets séparés grâce à une gestion fine des droits d'accès au niveau des ressources, soit comme un socle applicatif robuste pouvant être étendu pour un projet d'application web, le code étant organisé pour suivre les conventions classiques des applications web fullstack.
+
+### **Choix techniques et architecture**
+
+Pour que cela fonctionne, je m'appuie sur plusieurs piliers :
+
+- **Stack technique :** L’objectif est d’utiliser au maximum les briques existantes de l’écosystème MapLibre :
+  - **Martin** pour le service de tuiles à la volée.
+  - **Maputnik** comme base pour l'éditeur de style.
+  - **MapLibre** pour le support natif du format PMTiles.
+- **Communication :** Pour lier ces briques, j'utilise des technologies standards afin de faciliter l'adoption et la maintenance de l'outil : **React**, **FastAPI**, **Docker**, **Redis**, **PostGIS** et **PgBouncer**.
+- **Déploiement :** Fournir une application déployable sur un VPS ou dans le cloud avec une commande simple. Le but est de laisser le choix de l’infrastructure (auto-hébergé, cloud ou hybride) même pour des profils non-développeurs.
+
+Grâce au <a href="https://protomaps.com/" target="_blank" rel="noopener noreferrer">projet Protomaps</a>, il est désormais plus simple de mettre en place une architecture performante pour servir des volumes massifs de données sans serveur surdimensionné. J'étudie actuellement l'option d'une architecture hybride : un VPS minimaliste pour l'application et les tuiles mises à jour fréquemment, associé à un _object storage_ pour les couches volumineuses en PMTiles.
+
+### **Simplicité d'utilisation**
+
+Qu'il s'ageisse de GeoServer ou de Maputnik, l'expérience utilisateur est souvent complexe. L’idée de Canopy est de proposer une interface web intuitive, inspirée de solutions comme **Supabase**, dont l’UI est beaucoup plus proche des standards du web moderne que des logiciels classiques comme PGAdmin. En utilisant la bibliothèque de composants **Shadcn** et en explorant l'intégration d'un assistant IA dans Maputnik, j'espère rendre ces fonctionnalités accessibles au plus grand nombre.
+
+<div className="flex justify-center my-8">
+  <img
+    src={canopyStack}
+    alt="Stack technique de Canopy"
+    className="w-full max-w-2xl rounded-xl shadow-lg border-2 border-primary/20"
+  />
+</div>
+
+### **Challenge personnel et Roadmap**
+
+L'utilisation de React et FastAPI est nouvelle pour moi. C’est un défi technique, mais c'est aussi l’occasion de prendre en main des outils standards que je n'avais pas l'opportunité d'utiliser dans mes précédentes expériences professionnelles.
+
+**La roadmap actuelle :**
+
+- <CheckCircle2 className="inline-block w-4 h-4 text-emerald-500 mb-1 mr-2" />
+  Préparation de l’architecture et des fonctionnalités
+- <CheckCircle2 className="inline-block w-4 h-4 text-emerald-500 mb-1 mr-2" />
+  Implémentation du backend et de la base de données (auth/permissions)
+- <CheckCircle2 className="inline-block w-4 h-4 text-emerald-500 mb-1 mr-2" />
+  Implémentation du frontend (UI/Auth/Administration)
+- <CheckCircle2 className="inline-block w-4 h-4 text-emerald-500 mb-1 mr-2" />
+  Création de rôles PostgreSQL pour l'édition via QGIS
+- <Clock className="inline-block w-4 h-4 text-amber-500 mb-1 mr-2" />
+  Configuration des espaces de stockage (VPS ou cloud storage)
+- <Clock className="inline-block w-4 h-4 text-amber-500 mb-1 mr-2" /> Upload des
+  données : Geodata vers PostGIS ou PMTiles
+- <Clock className="inline-block w-4 h-4 text-amber-500 mb-1 mr-2" /> Gestion
+  des droits sur les données (applicatif et base de données)
+- <Circle className="inline-block w-4 h-4 text-muted-foreground mb-1 mr-2" />
+  Configuration des flux de tuiles via Martin
+- <Activity className="inline-block w-4 h-4 text-indigo-500 mb-1 mr-2" />
+  Intégration et personnalisation de Maputnik (POC OK)
+- <Circle className="inline-block w-4 h-4 text-muted-foreground mb-1 mr-2" />
+  Finaliser les millions de détails pour que tout fonctionne bien
+
+### **Pourquoi "Canopy" ?**
+
+C’est un hommage à **Leaflet** (qui signifie "foliole") de <a href="https://agafonkin.com/" target="_blank" rel="noopener noreferrer">Volodymyr Agafonkin</a>. Cette bibliothèque a été mon point d’entrée dans le développement et le web SIG. Si ce projet pouvait atteindre ne serait-ce qu'une infime partie de la réussite de Leaflet, j'en serais ravi.
+
+À suivre \!
