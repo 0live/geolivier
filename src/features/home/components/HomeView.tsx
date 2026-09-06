@@ -23,7 +23,19 @@ export function HomeView() {
             />
           </p>
           <p className="italic text-primary font-medium">
-            {t("home.hiring_status")}
+            <Trans
+              i18nKey="home.hiring_status"
+              components={{
+                1: (
+                  <a
+                    href="https://www.opengis.ch"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline font-semibold"
+                  />
+                ),
+              }}
+            />
           </p>
 
           <div className="pt-8 space-y-4">
@@ -32,12 +44,10 @@ export function HomeView() {
             </p>
             <div className="flex flex-wrap gap-3 justify-start md:justify-center">
               {[
-                "React",
-                "Maplibre",
-                "FastAPI",
-                "Martin",
-                "PostGIS",
-                "Cloud native formats",
+                "Fullstack",
+                "DevOps",
+                "Django",
+                "QGIS Server",
               ].map((tech) => (
                 <span
                   key={tech}
